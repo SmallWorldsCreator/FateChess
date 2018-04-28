@@ -51,12 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CardFlyAnim.cs" />
      <Compile Include="Assets\Scripts\Data\AtkRangeData.cs" />
      <Compile Include="Assets\Scripts\Data\FateData.cs" />
      <Compile Include="Assets\Scripts\Data\PawnData.cs" />
      <Compile Include="Assets\Scripts\Data\PawnTypeData.cs" />
+     <Compile Include="Assets\Scripts\hpValue.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Obj\BoardObj.cs" />
      <Compile Include="Assets\Scripts\Obj\PawnObj.cs" />
+     <Compile Include="Assets\Scripts\pawnInfo.cs" />
+     <Compile Include="Assets\Scripts\StateChanger.cs" />
+     <Compile Include="Assets\Scripts\StoryAnimPlay.cs" />
      <Compile Include="Assets\Scripts\Sys\BoardManager.cs" />
      <Compile Include="Assets\Scripts\Sys\GameManager.cs" />
      <Compile Include="Assets\Scripts\Sys\HeroObj.cs" />
