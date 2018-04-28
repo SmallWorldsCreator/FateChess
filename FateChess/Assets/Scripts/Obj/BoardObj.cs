@@ -15,7 +15,10 @@ public class BoardObj : MonoBehaviour {
 	}
 
 	public void OnMouseDown () {
-		BoardManager.instance.AddNowSelectPawn (index);
-		GameManager.instance.nowHero.UseCard();
+		PawnObj _pawn = BoardManager.instance.pawnObjs [index];
+		if (_pawn.data.typeData.side == E_PawnSide.None) {
+			BoardManager.instance.AddNowSelectPawn (index);
+			GameManager.instance.nowHero.UseCard ();
+		}
 	}
 }

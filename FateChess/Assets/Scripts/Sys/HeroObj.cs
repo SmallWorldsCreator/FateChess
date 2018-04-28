@@ -35,20 +35,35 @@ public class HeroObj : MonoBehaviour {
 		
 	}
 
+	Vector3 probability0 = new Vector3(7, 3, 0);
+	Vector3 probability1 = new Vector3(1.5f, 7, 1.5f);
+	Vector3 probability2 = new Vector3(0, 3, 7);
+
 	public void SetHp(int p_hp){
 		hp = p_hp;
 
-		for (int f = 0; f < 3; f++) {
-			// @@@@@@
-//			fateList[f].probability = XXXX
+		Vector3 _probability;
+		if (fate < 5) {
+			_probability = Vector3.MoveTowards (probability0, probability1, fate/5);
+		} else {
+			_probability = Vector3.MoveTowards (probability1, probability2, (fate-5)/5);
 		}
+
+		fateList [0].probability = _probability.x;
+		fateList [1].probability = _probability.y;
+		fateList [2].probability = _probability.z;
+
 
 		Refrash ();
 	}
 
 	public void AddCard(PawnData p_data){
-		pawnList.Add (p_data);
-		Refrash ();
+		if (pawnList.Count < 4) {
+			pawnList.Add (p_data);
+			Refrash ();
+		} else {
+
+		}
 	}
 
 	[Button("SelectAndUseCard")]public int selectAndUseCardBut;

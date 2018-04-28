@@ -24,6 +24,8 @@ public class GameManager : ManagerBase<GameManager> {
 	[NullAlarm]public Transform cmrTop;
 	[LockInInspector]public Vector3 cmrTargetPos;
 	public float cmrMoveSpeed;
+	public float animeRate = 1;
+	public bool autoFight = false;
 
 
 //	public override void Awake () {

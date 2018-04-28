@@ -1,0 +1,19 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sys\BoardManager.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Sys\GameManager.cs" Line="110" Column="69" />
+      <File FileName="Assets\Scripts\Sys\BoardManager.cs" Line="218" Column="3" />
+      <File FileName="Assets\Scripts\Sys\PawnManager.cs" Line="16" Column="5" />
+      <File FileName="Assets\Scripts\Data\FateData.cs" Line="8" Column="23" />
+      <File FileName="Assets\Scripts\Obj\PawnObj.cs" Line="26" Column="18" />
+      <File FileName="Assets\Scripts\Obj\BoardObj.cs" Line="19" Column="42" />
+      <File FileName="Assets\Scripts\Sys\HeroObj.cs" Line="89" Column="12" />
+      <File FileName="Assets\Scripts\Data\AtkRangeData.cs" Line="6" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

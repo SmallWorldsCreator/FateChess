@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 public class PawnManager : ManagerBase<PawnManager> {
+	[NullAlarm]public Sprite[] numberSprites;
 	[NullAlarm]public PawnObj pawnPrefab;
 	[NullAlarm]public PawnData pawnNull;
 	[NullAlarm]public PawnData pawnBasePlayer;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Pawn_Null
   m_EditorClassIdentifier: 
   level: -1
-  cost: 0
+  cost: -1
   hp: -1
   atk: -1
   typeData: {fileID: 11400000, guid: 26db3cbc56d76ee44919028ebe293da4, type: 2}

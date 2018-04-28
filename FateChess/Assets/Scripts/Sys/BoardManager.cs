@@ -15,7 +15,6 @@ public class BoardManager : ManagerBase<BoardManager> {
 		new Vector2( 0, -1)
 	};
 
-	public Color notAtkColor;
 //	public override void Awake () {
 //
 //	}
@@ -72,7 +71,6 @@ public class BoardManager : ManagerBase<BoardManager> {
 			int _x = (int)(_nowIndex % size.x);
 			int _y = (int)(_nowIndex / size.x);
 			Vector2 _nowPos = new Vector2 (_x, _y);
-
 			if (_pawn.data.typeData.side == p_side) {
 				if (_pawn.alreadyMove) {
 					_log += "pawn " + _nowPos.ToString () + " Already Move\n";
@@ -106,15 +104,43 @@ public class BoardManager : ManagerBase<BoardManager> {
 					}
 				}
 
+				Vector2 _enemyWay = Vector2.zero;
+				for(int _checkIndex=0; _checkIndex<pawnCount; _checkIndex++){
+					PawnObj _checkPawn = pawnObjs[_checkIndex];
+					if (_checkPawn.data.typeData.side == E_PawnSide.None) {						
+					} else if (_checkPawn.data.typeData.side == p_side) {
+					} else {
+						int _checkX = (int)(_nowIndex % size.x);
+						int _checkY = (int)(_nowIndex / size.x);
+						Vector2 _enemyPos = new Vector2 (_checkX, _checkY);
+						_enemyWay += _enemyPos;
+					}
+				}
+				_enemyWay.Normalize ();
+
+
+
 				int _len = _targetIndexList.Count;
 				if (_len > 0) {
-					int _random = Random.Range (0, _len);
-					int _moveIndex = _targetIndexList [_random];
-					int _moveX = (int)(_moveIndex % size.x);
-					int _moveY = (int)(_moveIndex / size.x);
+					float _sqrDistance = 999;
+					int _bestMoveIndex = -1;
+					int _moveX = 0;
+					int _moveY = 0;
+					foreach (int _moveIndex in _targetIndexList) {
+						_moveX = (int)(_moveIndex % size.x);
+						_moveY = (int)(_moveIndex / size.x);
+						Vector2 _moveWay = new Vector2 (_moveX, _moveY) - _nowPos;
+						float _nowSqrDistance = (_enemyWay - _moveWay).sqrMagnitude;
+						if (_nowSqrDistance < _sqrDistance) {
+							_sqrDistance = _nowSqrDistance;
+							_bestMoveIndex = _moveIndex;
+						}
+					}
+
+					_moveX = (int)(_bestMoveIndex % size.x);
+					_moveY = (int)(_bestMoveIndex / size.x);
 					_log += " @ select " + _moveX + "," + _moveY + "\n";
-//					yield return 
-					StartCoroutine(PawnMove (_nowIndex,  _moveIndex));
+					StartCoroutine(PawnMove (_nowIndex,  _bestMoveIndex));
 				}
 			} else {
 				_log += "pawn " + _nowPos.ToString () + " Is " + _pawn.data.typeData.side.ToString() + "\n";
@@ -127,7 +153,7 @@ public class BoardManager : ManagerBase<BoardManager> {
 			_pawn.alreadyMove = false;
 		}
 
-		yield return new WaitForSeconds (0.3f);
+		yield return new WaitForSeconds (0.3f * GameManager.instance.animeRate);
 
 		switch (GameManager.instance.state) {
 		case E_GAME_STATE.PlayerMove:
@@ -185,13 +211,16 @@ public class BoardManager : ManagerBase<BoardManager> {
 
 		switch (GameManager.instance.state) {
 		case E_GAME_STATE.PlayerAttack:
-			yield return new WaitForSeconds (1f);
+			yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
 			GameManager.instance.ChangeState (E_GAME_STATE.EnemyMove);
 			break;
 		case E_GAME_STATE.EnemyAttack:
-			yield return new WaitForSeconds (1f);
-			GameManager.instance.ChangeState (E_GAME_STATE.PlayerMove);
-//			GameManager.instance.ChangeState (E_GAME_STATE.PlayerNewFate);
+			yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
+			if (GameManager.instance.autoFight) {
+				GameManager.instance.ChangeState (E_GAME_STATE.PlayerMove);
+			}else{
+				GameManager.instance.ChangeState (E_GAME_STATE.PlayerNewFate);
+			}
 			break;
 		}
 	}
@@ -206,7 +235,7 @@ public class BoardManager : ManagerBase<BoardManager> {
 		_targetObj.SetHp (_startObj.hp);
 		_startObj.SetNewPawnData (PawnManager.instance.pawnNull);
 
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
 	}
 
 	public IEnumerator PawnAtk (int p_atkIndex, int p_targetIndex) {
@@ -218,27 +247,29 @@ public class BoardManager : ManagerBase<BoardManager> {
 
 		for (int f = 0; f < pawnCount; f++) {
 			PawnObj _pawn = pawnObjs[f];
-			_pawn.imageRender.color = notAtkColor;
+			_pawn.anime.Play("NotFocus", -1, 0);
 		}
-		_atkObj.imageRender.color = Color.white;
-		_targetObj.imageRender.color = Color.red;
+		_atkObj.anime.Play("Atk", -1, 0);
+		_targetObj.anime.Play("Hit", -1, 0);
 
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (0.5f * GameManager.instance.animeRate);
+//		Debug.Log ("Hit atk = " + _atkObj.data.atk + ", " + _targetObj.hp + " -> " + (_targetObj.hp - _atkObj.data.atk));
+		_targetObj.SetHp (_targetObj.hp - _atkObj.data.atk);
+		yield return new WaitForSeconds (0.5f * GameManager.instance.animeRate);
 
 		for (int f = 0; f < pawnCount; f++) {
 			PawnObj _pawn = pawnObjs[f];
-			_pawn.imageRender.color = Color.white;
+			_pawn.anime.Play("Idle", -1, 0);
 		}
 
 
-		Debug.Log ("Hit atk = " + _atkObj.data.atk + ", " + _targetObj.hp + " -> " + (_targetObj.hp - _atkObj.data.atk));
-		_targetObj.SetHp (Mathf.Max( _targetObj.hp - _atkObj.data.atk, 0));
+	
+
 
 		if (_targetObj.hp <= 0) {
-			_targetObj.imageRender.color = Color.black;
-			yield return new WaitForSeconds (1f);
+			_targetObj.anime.Play("Die", -1, 0);
+			yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
 
-			_targetObj.imageRender.color = Color.white;
 			_targetObj.SetNewPawnData (PawnManager.instance.pawnNull);
 		}
 	}
