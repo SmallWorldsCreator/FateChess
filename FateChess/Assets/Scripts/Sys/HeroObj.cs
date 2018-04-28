@@ -35,9 +35,9 @@ public class HeroObj : MonoBehaviour {
 		
 	}
 
-	Vector3 probability0 = new Vector3(7, 3, 0);
-	Vector3 probability1 = new Vector3(1.5f, 7, 1.5f);
-	Vector3 probability2 = new Vector3(0, 3, 7);
+	Vector3 probability0 = new Vector3(70, 30, 0 );
+	Vector3 probability1 = new Vector3(15, 70, 15);
+	Vector3 probability2 = new Vector3( 0, 30, 70);
 
 	public void SetHp(int p_hp){
 		hp = p_hp;
@@ -49,9 +49,9 @@ public class HeroObj : MonoBehaviour {
 			_probability = Vector3.MoveTowards (probability1, probability2, (fate-5)/5);
 		}
 
-		fateList [0].probability = _probability.x;
-		fateList [1].probability = _probability.y;
-		fateList [2].probability = _probability.z;
+		fateList [0].probability = (int)_probability.x;
+		fateList [1].probability = (int)_probability.y;
+		fateList [2].probability = (int)_probability.z;
 
 
 		Refrash ();
