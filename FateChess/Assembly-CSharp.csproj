@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6B7503D7-0F92-9547-61A4-E8BCEA3FE2DF}</ProjectGuid>
+    <ProjectGuid>{AA13892A-550B-8B86-2EA6-4FEF0BB3D29D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -51,54 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\DemoManager.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\Demo\OdlsAttDemo.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\Demo\OdlsAttObjJumpDemo.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsAttributes\ButtonAttribute.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsAttributes\IntAttribute.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsAttributes\ReorderableListUtility.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsAttributes\SerializedPropertyValue.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsAttributes\StringAttribute.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsAttributes\VariableAttribute.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsGUI\ExtendGUI.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsGUI\ExtendGUILayout.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsInspector\CanvasRendererInspector.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsInspector\RendererInspector.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsInspector\TextInspector.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsInspector\TransformInspector.cs" />
-     <Compile Include="Assets\Plugins\Odls\EditorCollection\OdlsTools\UiCreatTool.cs" />
-     <Compile Include="Assets\Plugins\Odls\Extend\EditorExtend.cs" />
-     <Compile Include="Assets\Plugins\Odls\Extend\EditorWWW.cs" />
-     <Compile Include="Assets\Plugins\Odls\Extend\FileExtend.cs" />
-     <Compile Include="Assets\Plugins\Odls\Extend\GameObjectExtend.cs" />
-     <Compile Include="Assets\Plugins\Odls\Extend\IntExtend.cs" />
-     <Compile Include="Assets\Plugins\Odls\Extend\StringExtend.cs" />
-     <Compile Include="Assets\Plugins\Odls\Extend\UiTextPositioning.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\Demo\ObjCmdDemo.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjActiver.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjCmdArgBase.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjCmdBase.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjCmdGroup.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjCmdManager.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjCmdStateMachine.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjDeleter.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjEnabler.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjEventSender.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjImageChenger.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjMover.cs" />
-     <Compile Include="Assets\Plugins\Odls\GameObjectCmd\ObjScaler.cs" />
-     <Compile Include="Assets\Plugins\Odls\Utility\CameraShoter.cs" />
-     <Compile Include="Assets\Plugins\Odls\Utility\DictionaryList.cs" />
-     <Compile Include="Assets\Plugins\Odls\Utility\IosPermissions.cs" />
-     <Compile Include="Assets\Plugins\Odls\Utility\ManagerBase.cs" />
-     <Compile Include="Assets\Plugins\Odls\Utility\TempImageRemover.cs" />
-     <Compile Include="Assets\Plugins\SoundManager\SoundConfigTable.cs" />
-     <Compile Include="Assets\Plugins\SoundManager\SoundData.cs" />
-     <Compile Include="Assets\Plugins\SoundManager\SoundDemo.cs" />
-     <Compile Include="Assets\Plugins\SoundManager\SoundManager.cs" />
-     <Compile Include="Assets\Plugins\SoundManager\SoundPlayObj.cs" />
-     <Compile Include="Assets\Plugins\SoundManager\SoundPlaySource.cs" />
-     <Compile Include="Assets\Plugins\SoundManager\SoundTable.cs" />
+     <Compile Include="Assets\StoryAnimPlay.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -183,6 +136,10 @@
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>/Users/dannychen/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{6B7503D7-0F92-9547-61A4-E8BCEA3FE2DF}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
