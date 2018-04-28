@@ -8,7 +8,9 @@ public class BoardManager : ManagerBase<BoardManager> {
 	[NullAlarm]public Transform pawnTop;
 	[NullAlarm]public PawnObj[] pawnObjs;
 	[NullAlarm]public BoardObj[] boardObjs;
-
+//	public override void Awake () {
+//
+//	}
 	void Start () {
 		pawnCount = pawnObjs.Length;
 

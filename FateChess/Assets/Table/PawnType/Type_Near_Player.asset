@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c949fb5b9e98749ae7dc80f1fab723, type: 3}
   m_Name: Type_Near_Player
   m_EditorClassIdentifier: 
-  image: {fileID: 21300004, guid: 1a187e9a04a3190469d6f27a09bb9791, type: 3}
+  image: {fileID: 21300000, guid: 6915eed3f6518504b93f6483d665ded1, type: 3}
   side: 0
   name: "\u8FD1\u6230"
   atkRanges:

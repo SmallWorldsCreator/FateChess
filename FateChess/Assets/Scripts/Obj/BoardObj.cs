@@ -17,5 +17,7 @@ public class BoardObj : MonoBehaviour {
 	public void OnMouseDown () {
 		Debug.Log ("OnMouseDown");
 		BoardManager.instance.AddNowSelectPawn (index);
+		GameManager.instance.nowHero.UseCard();
+
 	}
 }
