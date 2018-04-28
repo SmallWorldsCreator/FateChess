@@ -145,6 +145,9 @@ MonoBehaviour:
   imageRender: {fileID: 212648473219661060}
   atkRender: {fileID: 212994149196780250}
   hpRender: {fileID: 212686394777056734}
+  data: {fileID: 0}
+  alreadyMove: 0
+  moveSpeed: 4
 --- !u!212 &212648473219661060
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -328,6 +328,7 @@ MonoBehaviour:
   fateList: []
   pawnList: []
   hp: 5
+  selectAndUseCardBut: 0
 --- !u!1001 &233595342
 Prefab:
   m_ObjectHideFlags: 0
@@ -760,6 +761,26 @@ Prefab:
     - target: {fileID: 1212851332986134, guid: 4eb6086634722214bb0096ff2a408dc3, type: 2}
       propertyPath: m_Name
       value: PawnObj (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212648473219661060, guid: 4eb6086634722214bb0096ff2a408dc3,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212648473219661060, guid: 4eb6086634722214bb0096ff2a408dc3,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212648473219661060, guid: 4eb6086634722214bb0096ff2a408dc3,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212648473219661060, guid: 4eb6086634722214bb0096ff2a408dc3,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4eb6086634722214bb0096ff2a408dc3, type: 2}
@@ -1665,6 +1686,12 @@ MonoBehaviour:
   - {fileID: 1900694239}
   - {fileID: 1765905042}
   - {fileID: 1862765520}
+  moveOffsets:
+  - {x: 1, y: 0}
+  - {x: 0, y: 1}
+  - {x: -1, y: 0}
+  - {x: 0, y: -1}
+  notAtkColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0.5019608}
   nowSelectPawn: {fileID: 11400000, guid: f0a4fa28a81059045aa463d1d357847c, type: 2}
 --- !u!1001 &1122490478
 Prefab:
@@ -2932,6 +2959,7 @@ MonoBehaviour:
   fateList: []
   pawnList: []
   hp: 5
+  selectAndUseCardBut: 0
 --- !u!1001 &1765905040
 Prefab:
   m_ObjectHideFlags: 0
@@ -3112,6 +3140,8 @@ MonoBehaviour:
   pawnPrefab: {fileID: 114051407266560386, guid: 4eb6086634722214bb0096ff2a408dc3,
     type: 2}
   pawnNull: {fileID: 11400000, guid: 7a2fab2adccef394dae4660a053d0377, type: 2}
+  pawnBasePlayer: {fileID: 11400000, guid: d4c73a89a802256488f8986fccb302b6, type: 2}
+  pawnBaseEnemy: {fileID: 11400000, guid: f0a4fa28a81059045aa463d1d357847c, type: 2}
   playerPawnDataList:
   - {fileID: 11400000, guid: d4c73a89a802256488f8986fccb302b6, type: 2}
   - {fileID: 11400000, guid: 24ee853bd5f542242b86c104b8c5bc8e, type: 2}
@@ -3873,3 +3903,7 @@ MonoBehaviour:
   - {fileID: 1727658445}
   - {fileID: 202978825}
   nowSide: 0
+  cmrTop: {fileID: 1441948407}
+  cmrTargetPos: {x: 0, y: 0, z: 0}
+  cmrMoveSpeed: 10
+  changeStateBut: 3

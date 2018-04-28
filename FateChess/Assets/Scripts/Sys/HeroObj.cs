@@ -51,6 +51,12 @@ public class HeroObj : MonoBehaviour {
 		Refrash ();
 	}
 
+	[Button("SelectAndUseCard")]public int selectAndUseCardBut;
+	public void SelectAndUseCard(int p_index){
+		SelectCard (p_index);
+		UseCard ();
+	}
+
 	public void SelectCard(int p_index){
 		nowSelectIndex = p_index;
 

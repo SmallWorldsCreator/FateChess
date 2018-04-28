@@ -20,7 +20,12 @@ public enum E_GAME_STATE{
 public class GameManager : ManagerBase<GameManager> {
 	public E_GAME_STATE state;
 	[NullAlarm]public HeroObj[] heros;
-	[LockInInspector]public E_PawnSide nowSide = E_PawnSide.Player; 
+	[LockInInspector]public E_PawnSide nowSide = E_PawnSide.Player;
+	[NullAlarm]public Transform cmrTop;
+	[LockInInspector]public Vector3 cmrTargetPos;
+	public float cmrMoveSpeed;
+
+
 //	public override void Awake () {
 //
 //	}
@@ -52,12 +57,15 @@ public class GameManager : ManagerBase<GameManager> {
 			stateDict.Add (((E_GAME_STATE)f).ToString(), (E_GAME_STATE)f);
 		}
 
+		cmrTargetPos = BoardManager.instance. pawnObjs [12].transform.position;
+
 		ChangeState (E_GAME_STATE.Init);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		cmrTop.transform.position = Vector3.MoveTowards(cmrTop.transform.position, cmrTargetPos, cmrMoveSpeed * Time.deltaTime);
+
 	}
 
 	public void ChangeStateByAnime (string p_state) {
@@ -68,7 +76,10 @@ public class GameManager : ManagerBase<GameManager> {
 			Debug.LogError ("No State : [" + p_state + "]");
 		}
 	}
+
+	[Button("ChangeState")]public E_GAME_STATE changeStateBut;
 	public void ChangeState (E_GAME_STATE p_state) {
+		Debug.Log ("ChangeState" + state + " -> " + p_state);
 		state = p_state;
 		switch (state) {
 		case E_GAME_STATE.Init:
@@ -87,17 +98,16 @@ public class GameManager : ManagerBase<GameManager> {
 			
 			break;
 		case E_GAME_STATE.PlayerMove:
-			// @@@@@
-			ChangeState(E_GAME_STATE.PlayerNewFate);
+			StartCoroutine(BoardManager.instance.AllPawnMove (E_PawnSide.Player));
 			break;
 		case E_GAME_STATE.PlayerAttack:
-			
+			StartCoroutine(BoardManager.instance.AllPawnAtk (E_PawnSide.Player));
 			break;
 		case E_GAME_STATE.EnemyMove:
-			
+			StartCoroutine(BoardManager.instance.AllPawnMove (E_PawnSide.Enemy));
 			break;
 		case E_GAME_STATE.EnemyAttack:
-			
+			StartCoroutine(BoardManager.instance.AllPawnAtk (E_PawnSide.Enemy));
 			break;
 		case E_GAME_STATE.PlayerNewFate:
 			player.GenerateNewFate ();

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Type_Near_Enemy
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: e97b5522a6cb294468b97ef866897e7d, type: 3}
-  side: 0
+  side: 1
   name: "\u8FD1\u6230"
   atkRanges:
   - range: {x: 1, y: 0}

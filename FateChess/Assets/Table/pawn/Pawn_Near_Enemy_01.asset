@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   cost: 1
-  hp: 1
+  hp: 3
   atk: 1
   typeData: {fileID: 11400000, guid: cf9003823b33b7949bbec9f1d205c806, type: 2}
