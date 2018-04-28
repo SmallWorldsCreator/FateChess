@@ -51,7 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\StoryAnimPlay.cs" />
+     <Compile Include="Assets\Scripts\CardFlyAnim.cs" />
+     <Compile Include="Assets\Scripts\StoryAnimPlay.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
