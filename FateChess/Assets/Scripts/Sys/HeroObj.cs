@@ -108,6 +108,7 @@ public class HeroObj : MonoBehaviour {
 		// @@@@@@
 		BoardManager.instance.SelectPawn (fateList[0].data);
 		BoardManager.instance.AddNowSelectPawn (Random.Range(0,25));
+		GameManager.instance.ChangeState(E_GAME_STATE.Draw);
 	}
 
 	public void GenerateNewFate(){

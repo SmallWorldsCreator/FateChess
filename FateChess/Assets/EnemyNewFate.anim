@@ -175,7 +175,7 @@ AnimationClip:
   m_Events:
   - time: 1
     functionName: ChangeState
-    data: Draw
+    data: EnemyUseCard
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
