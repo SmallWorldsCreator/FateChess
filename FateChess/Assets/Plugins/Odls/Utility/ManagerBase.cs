@@ -46,12 +46,12 @@ public class ManagerBase<T> : MonoBehaviour where T:ManagerBase<T>{
 	[Button]public string SetAsInstanceBut = "SetAsInstance";
 	public void SetAsInstance(){
 		if(INSTANCE && (INSTANCE.GetInstanceID() != this.GetInstanceID())){
-			Debug.Log("Del : " + INSTANCE.GetInstanceID());
+//			Debug.Log("Del : " + INSTANCE.GetInstanceID());
 			DestroyImmediate(INSTANCE.gameObject);
 		}
 
 		INSTANCE = (T)this;
-		Debug.Log("INSTANCE : " + INSTANCE.GetInstanceID());
+//		Debug.Log("INSTANCE : " + INSTANCE.GetInstanceID());
 		string _name = typeof(T).ToString();
 		_name = Regex.Replace(_name, @"([a-z])([A-Z])", @"$1 $2");
 
