@@ -18,6 +18,7 @@ public enum E_GAME_STATE{
 };
 
 public class GameManager : ManagerBase<GameManager> {
+	public Animator CanvasAnimator;
 	public E_GAME_STATE state;
 	[NullAlarm]public HeroObj[] heros;
 	[LockInInspector]public E_PawnSide nowSide = E_PawnSide.Player; 
@@ -80,11 +81,10 @@ public class GameManager : ManagerBase<GameManager> {
 			player.SetHp (5);
 			ChangeState (E_GAME_STATE.Draw);
 			break;
-		case E_GAME_STATE.Draw:			
+		case E_GAME_STATE.Draw:
 			player.DrawCard ();
 			break;
 		case E_GAME_STATE.PlayerUseCard:
-			
 			break;
 		case E_GAME_STATE.PlayerMove:
 			// @@@@@
@@ -94,23 +94,30 @@ public class GameManager : ManagerBase<GameManager> {
 			
 			break;
 		case E_GAME_STATE.EnemyMove:
+			CanvasAnimator.Play ("CardSpreadOut");
 			
 			break;
 		case E_GAME_STATE.EnemyAttack:
-			
+			//test
+			ChangeState(E_GAME_STATE.EnemyUseCard);
 			break;
 		case E_GAME_STATE.PlayerNewFate:
 			player.GenerateNewFate ();
-
+			CanvasAnimator.Play("PlayerNewFate");
 			break;
 		case E_GAME_STATE.SetBar:
-			
+			//set bar animation
+			CanvasAnimator.Play("CardPutTogether");
 			break;
 		case E_GAME_STATE.EnemyNewFate:
+			//enemy new fate animation
+			CanvasAnimator.Play("EnemyNewFate");
 			enemy.GenerateNewFate ();
 			break;
 		case E_GAME_STATE.EnemyUseCard:
-			enemy.EnemyUseCard ();
+			//enemy.EnemyUseCard ();
+			//test
+			ChangeState(E_GAME_STATE.EnemyNewFate);
 			break;
 		}
 	}
