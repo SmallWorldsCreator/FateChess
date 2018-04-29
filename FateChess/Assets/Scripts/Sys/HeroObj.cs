@@ -12,6 +12,7 @@ public class HeroObj : MonoBehaviour {
 	public GameObject[] pawnCards = new GameObject[4];
 	public GameObject[] fateCards = new GameObject[3];
 	public GameObject usedCard;
+	public hpValue hpvalue;
 	int nowSelectIndex = -1;
 
 	const int maxValue = 10;
@@ -43,6 +44,10 @@ public class HeroObj : MonoBehaviour {
 	Vector3 probability0 = new Vector3(70, 30, 0 );
 	Vector3 probability1 = new Vector3(15, 70, 15);
 	Vector3 probability2 = new Vector3( 0, 30, 70);
+
+	public void SetHpForAnim(float p_hp){
+		SetHp (Mathf.FloorToInt(p_hp*10));
+	}
 
 	public void SetHp(int p_hp){
 		hp = p_hp;
@@ -174,6 +179,17 @@ public class HeroObj : MonoBehaviour {
 				pawnCards [i].transform.GetChild (3).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites[pawnList[i].atk];
 				pawnCards [i].transform.GetChild (4).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites[pawnList[i].hp];
 				pawnCards [i].transform.GetChild (5).GetComponent<Text> ().text = pawnList [i].typeData.name;
+				if (pawnList[i].cost>hp) {
+					foreach (Image img in pawnCards[i].GetComponentsInChildren<Image>()) {
+						img.color = Color.gray;
+					}
+					pawnCards [i].GetComponent<Image> ().color = Color.clear;
+				} else {
+					foreach (Image img in pawnCards[i].GetComponentsInChildren<Image>()) {
+						img.color = Color.white;
+					}	
+					pawnCards [i].GetComponent<Image> ().color = Color.clear;
+				}
 				pawnCards [i].transform.parent.gameObject.SetActive (true);
 			}
 			for (int i = len; i < 4; i++) {
@@ -189,6 +205,6 @@ public class HeroObj : MonoBehaviour {
 			usedCard.transform.GetChild (5).GetComponent<Text> ().text = pawnCards [nowSelectIndex].transform.GetChild (5).GetComponent<Text> ().text;
 
 		}
-
+		hpvalue.SetBarValue (((float)hp)/10f);
 	}
 }
