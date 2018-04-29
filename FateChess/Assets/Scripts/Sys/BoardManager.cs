@@ -63,7 +63,7 @@ public class BoardManager : ManagerBase<BoardManager> {
 	public IEnumerator AddPawn (PawnData p_data, int p_index) {
 		yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
 
-		pawnObjs [p_index].SetPawnData (p_data);
+		pawnObjs [p_index].SetNewPawnData (p_data);
 		pawnObjs [p_index].anime.Play ("In", -1, 0);
 
 		yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
@@ -174,9 +174,25 @@ public class BoardManager : ManagerBase<BoardManager> {
 	}
 
 	public List<int> GetAtkIndexList (Vector2 p_nowPos, PawnTypeData p_typeData) {
+		List<Vector2> _rangeList = new List<Vector2> ();
 		List<int> _targetIndexList = new List<int> ();
-		foreach (AtkRangeData _atkRange in p_typeData.atkRanges) {
-			Vector2 _targetPos = p_nowPos + _atkRange.range;
+
+		if (p_typeData.allRange) {
+			for (int _y = 0; _y < size.y; _y++) {
+				for (int _x = 0; _x < size.x; _x++) {
+
+				}
+			}
+		} else {
+			foreach (AtkRangeData _atkRange in p_typeData.atkRanges) {
+				for (int f = 1; f <= _atkRange.length; f++) {
+					_rangeList.Add (_atkRange.range*f);
+				}
+			}
+		}
+
+		foreach(Vector2 _range in _rangeList){
+			Vector2 _targetPos = p_nowPos + _range;
 
 			if (IntExtend.isInRange ((int)_targetPos.x, 0, (int)size.x - 1) && IntExtend.isInRange ((int)_targetPos.y, 0, (int)size.y - 1)) {
 				int _targetIndex = (int)(_targetPos.x + (_targetPos.y * size.x));

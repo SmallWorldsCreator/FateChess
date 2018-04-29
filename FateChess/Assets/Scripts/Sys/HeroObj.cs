@@ -124,7 +124,7 @@ public class HeroObj : MonoBehaviour {
 		if ((GameManager.instance.state != E_GAME_STATE.Init) && (side == E_PawnSide.Player)) {
 			if (AddCard (fateList [0].data)) {
 				GameManager.instance.CanvasAnimator.gameObject.GetComponent<CardFlyAnim> ().CardFlyIn (pawnList.Count-1);
-				GameManager.instance.CanvasAnimator.Play ("DrawCard");
+				GameManager.instance.CanvasAnimator.Play ("DrawCard", -1, 0);
 			}
 		}
 

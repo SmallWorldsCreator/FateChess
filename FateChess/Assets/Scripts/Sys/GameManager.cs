@@ -113,15 +113,15 @@ public class GameManager : ManagerBase<GameManager> {
 			break;
 		case E_GAME_STATE.PlayerNewFate:
 			player.GenerateNewFate ();
-			CanvasAnimator.Play("PlayerNewFate");
+			CanvasAnimator.Play("PlayerNewFate", -1, 0);
 			break;
 		case E_GAME_STATE.SetBar:
 			//set bar animation
-			CanvasAnimator.Play("CardPutTogether");
+			CanvasAnimator.Play("CardPutTogether", -1, 0);
 			break;
 		case E_GAME_STATE.EnemyNewFate:
 			//enemy new fate animation
-			CanvasAnimator.Play("EnemyNewFate");
+			CanvasAnimator.Play("EnemyNewFate", -1, 0);
 			enemy.GenerateNewFate ();
 			break;
 		case E_GAME_STATE.EnemyUseCard:
