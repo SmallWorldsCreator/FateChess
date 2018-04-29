@@ -11,6 +11,10 @@ public class hpValue : MonoBehaviour {
 		GameManager.instance.player.SetHp ((int)Mathf.Floor (HPbar.value * 10F));
 	}
 
+	public void SetBarValue(float v){
+		HPbar.value = v;
+	}
+
 	public void SetFinished(){
 		GameManager.instance.ChangeState (E_GAME_STATE.EnemyMove);
 	}
