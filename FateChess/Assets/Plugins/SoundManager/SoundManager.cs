@@ -107,7 +107,11 @@ public class SoundManager : ManagerBase<SoundManager> {
 #region "Play"
 	public static SoundPlayObj Play(string p_table, string p_key){
 		SoundData _soundData = GetSoundData (p_table,p_key);
-		return _soundData.Play (_soundData.defaultVolume, _soundData.defaultLoop);
+		if (_soundData != null) {
+			return _soundData.Play (_soundData.defaultVolume, _soundData.defaultLoop);
+		} else {
+			return null;
+		}
 	}
 	public static SoundPlayObj Play(string p_table, string p_key, bool p_loop){
 		SoundData _soundData = GetSoundData (p_table,p_key);
