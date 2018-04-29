@@ -65,6 +65,7 @@ public class BoardManager : ManagerBase<BoardManager> {
 
 		pawnObjs [p_index].SetNewPawnData (p_data);
 		pawnObjs [p_index].anime.Play ("In", -1, 0);
+		SoundManager.Play ("MainSoundTable", "PawnIn");
 
 		yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
 	}
@@ -274,7 +275,25 @@ public class BoardManager : ManagerBase<BoardManager> {
 		_atkObj.anime.Play("Atk", -1, 0);
 		_targetObj.anime.Play("Hit", -1, 0);
 
-		yield return new WaitForSeconds (0.5f * GameManager.instance.animeRate);
+		yield return new WaitForSeconds (0.3f * GameManager.instance.animeRate);
+		if (_atkObj.data.typeData.atkEffect != null) {
+			GameObject _effect = Instantiate (_atkObj.data.typeData.atkEffect);
+			_effect.transform.position = _targetObj.transform.position;
+		}
+		if (_atkObj.data.typeData.atkSoundName != "") {
+			SoundManager.Play ("MainSoundTable", _atkObj.data.typeData.atkSoundName);
+		}
+
+		GameManager.instance.CanvasAnimator.Play ("Atk", -1, 0);
+		if (_atkObj.data.typeData.side == E_PawnSide.Enemy) {
+			GameManager.instance.playerImage.sprite = _targetObj.data.typeData.image;
+			GameManager.instance.enemyImage.sprite = _atkObj.data.typeData.image;
+		} else {
+			GameManager.instance.playerImage.sprite = _atkObj.data.typeData.image;
+			GameManager.instance.enemyImage.sprite = _targetObj.data.typeData.image;
+		}
+
+		yield return new WaitForSeconds (0.2f * GameManager.instance.animeRate);
 //		Debug.Log ("Hit atk = " + _atkObj.data.atk + ", " + _targetObj.hp + " -> " + (_targetObj.hp - _atkObj.data.atk));
 		_targetObj.SetHp (_targetObj.hp - _atkObj.data.atk);
 		yield return new WaitForSeconds (0.5f * GameManager.instance.animeRate);
@@ -284,12 +303,9 @@ public class BoardManager : ManagerBase<BoardManager> {
 			_pawn.anime.Play("Idle", -1, 0);
 		}
 
-
-	
-
-
 		if (_targetObj.hp <= 0) {
 			_targetObj.anime.Play("Die", -1, 0);
+			SoundManager.Play ("MainSoundTable", "PawnDie");
 			yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
 
 			_targetObj.SetNewPawnData (PawnManager.instance.pawnNull);

@@ -54,16 +54,16 @@ public class HeroObj : MonoBehaviour {
 
 		Vector3 _probability;
 		if (fate < 5) {
-			_probability = Vector3.MoveTowards (probability0, probability1, fate/5);
+			_probability = Vector3.Lerp (probability0, probability1, (float)fate/5f);
 		} else {
-			_probability = Vector3.MoveTowards (probability1, probability2, (fate-5)/5);
+			_probability = Vector3.Lerp (probability1, probability2, ((float)fate-5f)/5f);
 		}
 
 		fateList [0].probability = (int)_probability.x;
 //		fateList [1].probability = (int)_probability.y;
 		fateList [2].probability = (int)_probability.z;
 
-		fateList [1].probability = 100 - (fateList [0].probability + fateList [1].probability);
+		fateList [1].probability = 100 - (fateList [0].probability + fateList [2].probability);
 
 		Refrash ();
 
@@ -105,6 +105,7 @@ public class HeroObj : MonoBehaviour {
 
 		pawnList.RemoveAt (nowSelectIndex);
 		nowSelectIndex = -1;
+		SoundManager.Play ("MainSoundTable", "UseCard");
 		Refrash ();
 	}
 
@@ -155,6 +156,8 @@ public class HeroObj : MonoBehaviour {
 			if (AddCard (fateList [0].data)) {
 				GameManager.instance.CanvasAnimator.gameObject.GetComponent<CardFlyAnim> ().CardFlyIn (pawnList.Count-1);
 				GameManager.instance.CanvasAnimator.Play ("DrawCard", -1, 0);
+				SoundManager.Play ("MainSoundTable", "DrawCard");
+
 			}
 		}
 

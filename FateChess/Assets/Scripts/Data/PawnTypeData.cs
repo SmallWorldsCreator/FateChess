@@ -16,5 +16,6 @@ public class PawnTypeData : ScriptableObject {
 	public RuntimeAnimatorController animeController;
 	public AtkRangeData[] atkRanges;
 	public GameObject atkEffect;
+	public string atkSoundName = "";
 	public bool allRange = false;
 }

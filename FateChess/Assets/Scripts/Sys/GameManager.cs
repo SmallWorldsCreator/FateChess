@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum E_GAME_STATE{
 	Init,
@@ -19,6 +20,7 @@ public enum E_GAME_STATE{
 
 public class GameManager : ManagerBase<GameManager> {
 	[NullAlarm]public Animator CanvasAnimator;
+	[NullAlarm]public Image playerImage,enemyImage;
 	public E_GAME_STATE state;
 	[NullAlarm]public HeroObj[] heros;
 	[LockInInspector]public E_PawnSide nowSide = E_PawnSide.Player;
@@ -118,6 +120,7 @@ public class GameManager : ManagerBase<GameManager> {
 		case E_GAME_STATE.PlayerNewFate:
 			player.GenerateNewFate ();
 			CanvasAnimator.Play("PlayerNewFate", -1, 0);
+			SoundManager.Play ("MainSoundTable", "FateRota");
 			break;
 		case E_GAME_STATE.SetBar:
 			//set bar animation
@@ -126,6 +129,7 @@ public class GameManager : ManagerBase<GameManager> {
 		case E_GAME_STATE.EnemyNewFate:
 			//enemy new fate animation
 			CanvasAnimator.Play("EnemyNewFate", -1, 0);
+			SoundManager.Play ("MainSoundTable", "FateRota");
 			enemy.GenerateNewFate ();
 			enemy.SetHp(Random.Range(0,11));
 
