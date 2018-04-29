@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c949fb5b9e98749ae7dc80f1fab723, type: 3}
+  m_Name: GD
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 2229a98c41877f141b1a502b027e8a46, type: 3}
+  side: 0
+  name: "\u5DEB\u59AE"
+  animeController: {fileID: 9100000, guid: 46dcf9b0f761347469badc815f579ba8, type: 2}
+  atkRanges: []
+  atkEffect: {fileID: 1652705390855868, guid: 14e84e2ff3bf5fc4ca9ef096f607b84c, type: 2}
+  allRange: 1

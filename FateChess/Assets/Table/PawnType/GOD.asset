@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c949fb5b9e98749ae7dc80f1fab723, type: 3}
+  m_Name: GOD
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: 80a52abef257394459f73ea09b71898c, type: 3}
+  side: 1
+  name: ????????
+  animeController: {fileID: 9100000, guid: 1c0a3aee23dba8e4a8874eab0062b08a, type: 2}
+  atkRanges:
+  - range: {x: 1, y: 0}
+    length: 4
+  - range: {x: 0, y: 1}
+    length: 4
+  - range: {x: -1, y: 0}
+    length: 4
+  - range: {x: 0, y: -1}
+    length: 4
+  atkEffect: {fileID: 1249394282328128, guid: ccfda591838959140924b342133d0184, type: 2}
+  allRange: 0
