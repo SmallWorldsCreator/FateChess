@@ -12,7 +12,6 @@ public class HeroObj : MonoBehaviour {
 	public GameObject[] pawnCards = new GameObject[4];
 	public GameObject[] fateCards = new GameObject[3];
 	public GameObject usedCard;
-	public Sprite[] numbers = new Sprite[11];
 	int nowSelectIndex = -1;
 
 	const int maxValue = 10;
@@ -64,12 +63,13 @@ public class HeroObj : MonoBehaviour {
 
 	}
 
-	public void AddCard(PawnData p_data){
+	public bool AddCard(PawnData p_data){
 		if (pawnList.Count < 4) {
 			pawnList.Add (p_data);
 			Refrash ();
+			return true;
 		} else {
-
+			return false;
 		}
 	}
 
@@ -81,33 +81,28 @@ public class HeroObj : MonoBehaviour {
 
 	public void SelectCard(int p_index){
 		nowSelectIndex = p_index;
-
+		BoardManager.instance.SelectPawn (pawnList[p_index]);
 		Refrash ();
 	}
 
 	public void UseCard(){
+		if (nowSelectIndex < 0) {
+			return;
+		}
+
 		if (side == E_PawnSide.Player) {
 			GameManager.instance.CanvasAnimator.GetComponent<CardFlyAnim> ().CardFlyOut (nowSelectIndex);
 		}
-		int usedCount =0;
-		for (int i = 0; i < 4; i++) {
-			if (!pawnCards [i].transform.parent.gameObject.activeSelf) {
-				usedCount += 1;
-			}
-		}
-		Debug.Log (usedCount);
-		if (usedCount < nowSelectIndex) {
-			pawnList.RemoveAt (nowSelectIndex - usedCount);
-		} else {
-			pawnList.RemoveAt (nowSelectIndex);
-		}
+
+		pawnList.RemoveAt (nowSelectIndex);
+		nowSelectIndex = -1;
 		Refrash ();
 	}
 
-	public void EnemyUseCard(){
+	public IEnumerator EnemyUseCard(){
 		// @@@@@@
 		BoardManager.instance.SelectPawn (fateList[0].data);
-		BoardManager.instance.AddNowSelectPawn (Random.Range(0,25));
+		yield return StartCoroutine(BoardManager.instance.AddNowSelectPawn (Random.Range(0,25)));
 		GameManager.instance.ChangeState(E_GAME_STATE.Draw);
 	}
 
@@ -125,12 +120,14 @@ public class HeroObj : MonoBehaviour {
 	public void DrawCard(){
 		// @@@@@@
 //		fateList[f].probability
-		if (GameManager.instance.state != E_GAME_STATE.Init&& side == E_PawnSide.Player) {
-			GameManager.instance.CanvasAnimator.gameObject.GetComponent<CardFlyAnim> ().CardFlyIn (pawnList.Count);
-			GameManager.instance.CanvasAnimator.Play ("DrawCard");
+
+		if ((GameManager.instance.state != E_GAME_STATE.Init) && (side == E_PawnSide.Player)) {
+			if (AddCard (fateList [0].data)) {
+				GameManager.instance.CanvasAnimator.gameObject.GetComponent<CardFlyAnim> ().CardFlyIn (pawnList.Count-1);
+				GameManager.instance.CanvasAnimator.Play ("DrawCard");
+			}
 		}
 
-		AddCard (fateList[0].data);
 	}
 
 	public void Refrash(){
@@ -138,9 +135,9 @@ public class HeroObj : MonoBehaviour {
 			for (int i = 0; i < 3; i++) {
 				fateCards [i].transform.GetChild (0).GetComponent<Image> ().sprite = fateList [i].data.typeData.image;
 				fateCards [i].transform.GetChild (1).GetComponent<Text> ().text = fateList [i].probability.ToString () + "%";
-				fateCards [i].transform.GetChild (2).GetComponent<Image> ().sprite = numbers [fateList [i].data.hp];
-				fateCards [i].transform.GetChild (3).GetComponent<Image> ().sprite = numbers [fateList [i].data.atk];
-				fateCards [i].transform.GetChild (4).GetComponent<Image> ().sprite = numbers [fateList [i].data.cost];
+				fateCards [i].transform.GetChild (2).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites [fateList [i].data.hp];
+				fateCards [i].transform.GetChild (3).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites [fateList [i].data.atk];
+				fateCards [i].transform.GetChild (4).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites [fateList [i].data.cost];
 
 			}
 		}
@@ -148,9 +145,9 @@ public class HeroObj : MonoBehaviour {
 			int len = pawnList.Count;
 			for (int i = 0; i < len; i++) {
 				pawnCards [i].transform.GetChild (0).GetComponent<Image> ().sprite = pawnList [i].typeData.image;
-				pawnCards [i].transform.GetChild (2).GetComponent<Image> ().sprite = numbers[pawnList[i].cost];
-				pawnCards [i].transform.GetChild (3).GetComponent<Image> ().sprite = numbers[pawnList[i].atk];
-				pawnCards [i].transform.GetChild (4).GetComponent<Image> ().sprite = numbers[pawnList[i].hp];
+				pawnCards [i].transform.GetChild (2).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites[pawnList[i].cost];
+				pawnCards [i].transform.GetChild (3).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites[pawnList[i].atk];
+				pawnCards [i].transform.GetChild (4).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites[pawnList[i].hp];
 				pawnCards [i].transform.GetChild (5).GetComponent<Text> ().text = pawnList [i].typeData.name;
 				pawnCards [i].transform.parent.gameObject.SetActive (true);
 			}

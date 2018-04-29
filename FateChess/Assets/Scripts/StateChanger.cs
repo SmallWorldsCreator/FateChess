@@ -16,5 +16,8 @@ public class StateChanger : MonoBehaviour {
 
 	public void ChangeState(string state){
 		GameManager.instance.ChangeStateByAnime (state);
+		if (state == "EnemyUseCard") {
+			Debug.Break ();
+		}
 	}
 }

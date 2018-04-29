@@ -14,4 +14,5 @@ MonoBehaviour:
   image: {fileID: 0}
   side: -1
   name: 
+  anime: {fileID: 9100000, guid: ff9a5bbdea4564f4fa417178e842330a, type: 2}
   atkRanges: []

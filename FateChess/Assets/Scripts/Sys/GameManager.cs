@@ -125,7 +125,7 @@ public class GameManager : ManagerBase<GameManager> {
 			enemy.GenerateNewFate ();
 			break;
 		case E_GAME_STATE.EnemyUseCard:
-			enemy.EnemyUseCard ();
+			StartCoroutine(enemy.EnemyUseCard ());
 			break;
 		}
 	}

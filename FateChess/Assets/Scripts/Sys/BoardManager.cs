@@ -33,14 +33,14 @@ public class BoardManager : ManagerBase<BoardManager> {
 		pawnObjs [ 2].SetNewPawnData (PawnManager.instance.pawnBasePlayer);
 		pawnObjs [22].SetNewPawnData (PawnManager.instance.pawnBaseEnemy);
 
-		pawnObjs [ 0].SetNewPawnData (PawnManager.instance.pawnBasePlayer);
-		pawnObjs [ 1].SetNewPawnData (PawnManager.instance.pawnBasePlayer);
-		pawnObjs [ 3].SetNewPawnData (PawnManager.instance.pawnBasePlayer);
-		pawnObjs [ 4].SetNewPawnData (PawnManager.instance.pawnBasePlayer);
-		pawnObjs [20].SetNewPawnData (PawnManager.instance.pawnBaseEnemy);
-		pawnObjs [21].SetNewPawnData (PawnManager.instance.pawnBaseEnemy);
-		pawnObjs [23].SetNewPawnData (PawnManager.instance.pawnBaseEnemy);
-		pawnObjs [24].SetNewPawnData (PawnManager.instance.pawnBaseEnemy);
+//		pawnObjs [ 0].SetNewPawnData (PawnManager.instance.pawnBasePlayer);
+//		pawnObjs [ 1].SetNewPawnData (PawnManager.instance.pawnBasePlayer);
+//		pawnObjs [ 3].SetNewPawnData (PawnManager.instance.pawnBasePlayer);
+//		pawnObjs [ 4].SetNewPawnData (PawnManager.instance.pawnBasePlayer);
+//		pawnObjs [20].SetNewPawnData (PawnManager.instance.pawnBaseEnemy);
+//		pawnObjs [21].SetNewPawnData (PawnManager.instance.pawnBaseEnemy);
+//		pawnObjs [23].SetNewPawnData (PawnManager.instance.pawnBaseEnemy);
+//		pawnObjs [24].SetNewPawnData (PawnManager.instance.pawnBaseEnemy);
 
 	}
 
@@ -53,14 +53,20 @@ public class BoardManager : ManagerBase<BoardManager> {
 		nowSelectPawn = p_data;
 	}
 
-	public void AddNowSelectPawn (int p_index) {
+	public IEnumerator AddNowSelectPawn (int p_index) {
 		if (nowSelectPawn != null) {
-			AddPawn (nowSelectPawn, p_index);
+			yield return StartCoroutine( AddPawn (nowSelectPawn, p_index));
+			nowSelectPawn = null;
 		}
 	}
 
-	public void AddPawn (PawnData p_data, int p_index) {
+	public IEnumerator AddPawn (PawnData p_data, int p_index) {
+		yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
+
 		pawnObjs [p_index].SetPawnData (p_data);
+		pawnObjs [p_index].anime.Play ("In", -1, 0);
+
+		yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
 	}
 
 	public IEnumerator AllPawnMove (E_PawnSide p_side) {
