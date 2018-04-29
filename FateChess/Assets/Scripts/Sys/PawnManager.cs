@@ -4,10 +4,13 @@ using UnityEngine;
 
 
 public class PawnManager : ManagerBase<PawnManager> {
-	public PawnObj pawnPrefab;
-	public PawnData pawnNull;
-	public List<PawnData> playerPawnDataList = new List<PawnData>();
-	public List<PawnData> enemyPawnDataList = new List<PawnData>();
+	[NullAlarm]public Sprite[] numberSprites;
+	[NullAlarm]public PawnObj pawnPrefab;
+	[NullAlarm]public PawnData pawnNull;
+	[NullAlarm]public PawnData pawnBasePlayer;
+	[NullAlarm]public PawnData pawnBaseEnemy;
+	[NullAlarm]public List<PawnData> playerPawnDataList = new List<PawnData>();
+	[NullAlarm]public List<PawnData> enemyPawnDataList = new List<PawnData>();
 	[V2Lable("min", "max")]public Vector2[] pawnRanges;
 //	public override void Awake () {
 //

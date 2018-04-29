@@ -1,2 +1,4 @@
 FateChess/Library
 FateChess/Temp
+*.cs
+FateChess/Assets/Scripts/Sys/GameManager.cs
