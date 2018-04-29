@@ -824,6 +824,8 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: a04ed814d67c81943a912f0907c044a1, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: ff20164d0f1f8b44691a87936ceb15db, type: 3}
     attribute: m_Sprite
     path: image/pawn
     classID: 212
@@ -1014,6 +1016,7 @@ AnimationClip:
     - {fileID: 21300000, guid: 7a62a50297ed85f4a8598ce6bcf9d3d7, type: 3}
     - {fileID: 21300000, guid: 7a62a50297ed85f4a8598ce6bcf9d3d7, type: 3}
     - {fileID: 21300000, guid: a04ed814d67c81943a912f0907c044a1, type: 3}
+    - {fileID: 21300000, guid: ff20164d0f1f8b44691a87936ceb15db, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

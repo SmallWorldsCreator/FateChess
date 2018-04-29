@@ -351,6 +351,22 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: ca2eec5bdee855446b91ee742406b027, type: 3}
+    - time: 0.083333336
+      value: {fileID: 21300000, guid: 98965895fbc68dc4898941cd6a33c997, type: 3}
+    - time: 0.16666667
+      value: {fileID: 21300000, guid: eb8c6dccc8ec3aa429dfa3b59bfa6282, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: 0e04f6e994352db49888faf1e2babeaf, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: 4a4b5c00d6c1ece4d9d0156b8f7af4a8, type: 3}
+    - time: 0.41666666
+      value: {fileID: 21300000, guid: dd0b8a33c661fbf4e9f605c59f6a3491, type: 3}
+    - time: 0.53333336
+      value: {fileID: 21300000, guid: ed2ca994630f4f341954506b258c0397, type: 3}
+    - time: 0.6666667
+      value: {fileID: 21300000, guid: 5c0502ece180a0246b2b97868c9558d2, type: 3}
+    - time: 0.8333333
+      value: {fileID: 21300000, guid: 39da6ba7777c2e94aa44b05bdae007ed, type: 3}
     - time: 1
       value: {fileID: 21300000, guid: ca2eec5bdee855446b91ee742406b027, type: 3}
     attribute: m_Sprite
@@ -459,6 +475,14 @@ AnimationClip:
       isPPtrCurve: 0
     pptrCurveMapping:
     - {fileID: 21300000, guid: ca2eec5bdee855446b91ee742406b027, type: 3}
+    - {fileID: 21300000, guid: 98965895fbc68dc4898941cd6a33c997, type: 3}
+    - {fileID: 21300000, guid: eb8c6dccc8ec3aa429dfa3b59bfa6282, type: 3}
+    - {fileID: 21300000, guid: 0e04f6e994352db49888faf1e2babeaf, type: 3}
+    - {fileID: 21300000, guid: 4a4b5c00d6c1ece4d9d0156b8f7af4a8, type: 3}
+    - {fileID: 21300000, guid: dd0b8a33c661fbf4e9f605c59f6a3491, type: 3}
+    - {fileID: 21300000, guid: ed2ca994630f4f341954506b258c0397, type: 3}
+    - {fileID: 21300000, guid: 5c0502ece180a0246b2b97868c9558d2, type: 3}
+    - {fileID: 21300000, guid: 39da6ba7777c2e94aa44b05bdae007ed, type: 3}
     - {fileID: 21300000, guid: ca2eec5bdee855446b91ee742406b027, type: 3}
     - {fileID: 21300000, guid: 4536d001d34312a4ab85c3e0ee0186e3, type: 3}
     - {fileID: 21300000, guid: 4536d001d34312a4ab85c3e0ee0186e3, type: 3}
