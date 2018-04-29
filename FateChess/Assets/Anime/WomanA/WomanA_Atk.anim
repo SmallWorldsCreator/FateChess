@@ -367,6 +367,22 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: a04ed814d67c81943a912f0907c044a1, type: 3}
+    - time: 0.11666667
+      value: {fileID: 21300000, guid: ff20164d0f1f8b44691a87936ceb15db, type: 3}
+    - time: 0.21666667
+      value: {fileID: 21300000, guid: e189ddff42db0ef428f7fe380c9c2e69, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: 22390acf54b557647bc967785dd12e30, type: 3}
+    - time: 0.45
+      value: {fileID: 21300000, guid: 9ae09dffb18d696408359db5237aab91, type: 3}
+    - time: 0.55
+      value: {fileID: 21300000, guid: 7307a261be9597344b1f97c923ce72a1, type: 3}
+    - time: 0.6666667
+      value: {fileID: 21300000, guid: cccda22bf5468c24ab52f86235d11cfa, type: 3}
+    - time: 0.78333336
+      value: {fileID: 21300000, guid: dbdac275ce369de45829909a1a22563e, type: 3}
+    - time: 0.8833333
+      value: {fileID: 21300000, guid: 8580064d8277f2f4f9c2488fc4d15600, type: 3}
     - time: 1
       value: {fileID: 21300000, guid: a04ed814d67c81943a912f0907c044a1, type: 3}
     attribute: m_Sprite
@@ -498,6 +514,14 @@ AnimationClip:
       isPPtrCurve: 0
     pptrCurveMapping:
     - {fileID: 21300000, guid: a04ed814d67c81943a912f0907c044a1, type: 3}
+    - {fileID: 21300000, guid: ff20164d0f1f8b44691a87936ceb15db, type: 3}
+    - {fileID: 21300000, guid: e189ddff42db0ef428f7fe380c9c2e69, type: 3}
+    - {fileID: 21300000, guid: 22390acf54b557647bc967785dd12e30, type: 3}
+    - {fileID: 21300000, guid: 9ae09dffb18d696408359db5237aab91, type: 3}
+    - {fileID: 21300000, guid: 7307a261be9597344b1f97c923ce72a1, type: 3}
+    - {fileID: 21300000, guid: cccda22bf5468c24ab52f86235d11cfa, type: 3}
+    - {fileID: 21300000, guid: dbdac275ce369de45829909a1a22563e, type: 3}
+    - {fileID: 21300000, guid: 8580064d8277f2f4f9c2488fc4d15600, type: 3}
     - {fileID: 21300000, guid: a04ed814d67c81943a912f0907c044a1, type: 3}
     - {fileID: 21300000, guid: 7a62a50297ed85f4a8598ce6bcf9d3d7, type: 3}
     - {fileID: 21300000, guid: 7a62a50297ed85f4a8598ce6bcf9d3d7, type: 3}
