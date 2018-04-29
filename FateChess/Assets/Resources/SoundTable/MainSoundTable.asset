@@ -9,8 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9e3e291af112d74e82431e65ae41152, type: 3}
-  m_Name: Add_Your_SoundTable_Here
+  m_Name: MainSoundTable
   m_EditorClassIdentifier: 
-  isLoaded: 0
-  config: {fileID: 11400000, guid: decf04e9e8a4f054c9b748f47f353510, type: 2}
+  config: {fileID: 11400000, guid: 9bae4aee6640587458a294b89d5745f3, type: 2}
   soundList: []

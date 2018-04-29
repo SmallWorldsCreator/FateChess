@@ -205,6 +205,8 @@ public class HeroObj : MonoBehaviour {
 			usedCard.transform.GetChild (5).GetComponent<Text> ().text = pawnCards [nowSelectIndex].transform.GetChild (5).GetComponent<Text> ().text;
 
 		}
-		hpvalue.SetBarValue (((float)hp)/10f);
+		if (side == E_PawnSide.Player) {
+			hpvalue.SetBarValue (((float)hp) / 10f);
+		}
 	}
 }
