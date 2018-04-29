@@ -20,11 +20,17 @@ public class PawnManager : ManagerBase<PawnManager> {
 		return _list[Random.Range(0, _list.Count)];
 	}
 	public FateData GetFateData (E_PawnSide p_side ,int p_fate, int p_index) {
-		// @@@@@
+		
 		List<PawnData> _list = ((p_side == E_PawnSide.Player) ? playerPawnDataList : enemyPawnDataList);
 
-		FateData _data = new FateData (_list[Random.Range(0, _list.Count)]);
-		return _data;
+		Vector2 _range = pawnRanges[p_index];
+		List<PawnData> _inRangeDataList = new List<PawnData>();
+
+		foreach (PawnData _data in _list) {
+			_inRangeDataList.Add (_data);
+		}
+
+		return new FateData (_inRangeDataList[Random.Range(0, _inRangeDataList.Count)]);;
 	}
 
 	void Start () {

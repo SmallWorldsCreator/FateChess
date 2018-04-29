@@ -55,9 +55,10 @@ public class HeroObj : MonoBehaviour {
 		}
 
 		fateList [0].probability = (int)_probability.x;
-		fateList [1].probability = (int)_probability.y;
+//		fateList [1].probability = (int)_probability.y;
 		fateList [2].probability = (int)_probability.z;
 
+		fateList [1].probability = 100 - (fateList [0].probability + fateList [1].probability);
 
 		Refrash ();
 
@@ -80,9 +81,11 @@ public class HeroObj : MonoBehaviour {
 	}
 
 	public void SelectCard(int p_index){
-		nowSelectIndex = p_index;
-		BoardManager.instance.SelectPawn (pawnList[p_index]);
-		Refrash ();
+		if (pawnList [p_index].cost <= hp) {
+			nowSelectIndex = p_index;
+			BoardManager.instance.SelectPawn (pawnList [p_index]);
+//			Refrash ();
+		}
 	}
 
 	public void UseCard(){
@@ -93,6 +96,7 @@ public class HeroObj : MonoBehaviour {
 		if (side == E_PawnSide.Player) {
 			GameManager.instance.CanvasAnimator.GetComponent<CardFlyAnim> ().CardFlyOut (nowSelectIndex);
 		}
+		SetHp(hp - pawnList [nowSelectIndex].cost);
 
 		pawnList.RemoveAt (nowSelectIndex);
 		nowSelectIndex = -1;
@@ -100,9 +104,29 @@ public class HeroObj : MonoBehaviour {
 	}
 
 	public IEnumerator EnemyUseCard(){
-		// @@@@@@
-		BoardManager.instance.SelectPawn (fateList[0].data);
-		yield return StartCoroutine(BoardManager.instance.AddNowSelectPawn (Random.Range(0,25)));
+
+		if (hp >= fateList [2].data.cost) {
+			BoardManager.instance.SelectPawn (fateList [2].data);
+		} else if (hp >= fateList [1].data.cost) {
+			BoardManager.instance.SelectPawn (fateList [1].data);
+		} else if (hp >= fateList [0].data.cost) {
+			BoardManager.instance.SelectPawn (fateList [0].data);
+		} else {
+			GameManager.instance.ChangeState(E_GAME_STATE.Draw);
+			yield break;
+		}
+
+
+		List<int> _canAddIndexList = new List<int> ();
+		foreach(PawnObj _pawn in BoardManager.instance.pawnObjs){
+			if (_pawn.data.typeData.side == E_PawnSide.None) {
+				_canAddIndexList.Add (_pawn.index);
+			}
+		}
+
+		int _addIndex = _canAddIndexList[Random.Range(0, _canAddIndexList.Count)];
+
+		yield return StartCoroutine(BoardManager.instance.AddNowSelectPawn (_addIndex));
 		GameManager.instance.ChangeState(E_GAME_STATE.Draw);
 	}
 
@@ -118,8 +142,9 @@ public class HeroObj : MonoBehaviour {
 	}
 
 	public void DrawCard(){
-		// @@@@@@
 //		fateList[f].probability
+
+
 
 		if ((GameManager.instance.state != E_GAME_STATE.Init) && (side == E_PawnSide.Player)) {
 			if (AddCard (fateList [0].data)) {

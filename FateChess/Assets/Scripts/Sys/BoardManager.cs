@@ -180,7 +180,7 @@ public class BoardManager : ManagerBase<BoardManager> {
 		if (p_typeData.allRange) {
 			for (int _y = 0; _y < size.y; _y++) {
 				for (int _x = 0; _x < size.x; _x++) {
-
+					_rangeList.Add (new Vector2(_x, _y) - p_nowPos);
 				}
 			}
 		} else {

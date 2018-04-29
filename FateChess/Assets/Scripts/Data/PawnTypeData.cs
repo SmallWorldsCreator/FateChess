@@ -15,5 +15,6 @@ public class PawnTypeData : ScriptableObject {
 	public string name;
 	public RuntimeAnimatorController animeController;
 	public AtkRangeData[] atkRanges;
+	public GameObject atkEffect;
 	public bool allRange = false;
 }

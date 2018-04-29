@@ -15,10 +15,10 @@ public class CardFlyAnim : MonoBehaviour {
 
 	void Update(){
 		if (TurnStarting) {
-			step += 2*Time.deltaTime;
+			step += 2 * Time.deltaTime;
 			Cards [cardnum].GetComponent<RectTransform> ().localPosition
-			= Vector3.Lerp (StartFlyPosition-new Vector3(cardnum*256,0,0), EndFlyPosition, step);
-			if (step>=1) {
+			= Vector3.Lerp (StartFlyPosition - new Vector3 (cardnum * 256, 0, 0), EndFlyPosition, step);
+			if (step >= 1) {
 				step = 0;
 				TurnStarting = false;
 			}

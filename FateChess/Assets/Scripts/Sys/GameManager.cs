@@ -92,6 +92,10 @@ public class GameManager : ManagerBase<GameManager> {
 
 			player.GenerateNewFate ();
 			player.SetHp (5);
+
+			enemy.GenerateNewFate ();
+			enemy.SetHp (5);
+
 			ChangeState (E_GAME_STATE.Draw);
 			break;
 		case E_GAME_STATE.Draw:
@@ -123,6 +127,8 @@ public class GameManager : ManagerBase<GameManager> {
 			//enemy new fate animation
 			CanvasAnimator.Play("EnemyNewFate", -1, 0);
 			enemy.GenerateNewFate ();
+			enemy.SetHp(Random.Range(0,11));
+
 			break;
 		case E_GAME_STATE.EnemyUseCard:
 			StartCoroutine(enemy.EnemyUseCard ());
