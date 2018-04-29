@@ -13,7 +13,7 @@ public class PawnTypeData : ScriptableObject {
 	public Sprite image;
 	public E_PawnSide side;
 	public string name;
-	public RuntimeAnimatorController anime;
+	public RuntimeAnimatorController animeController;
 	public AtkRangeData[] atkRanges;
-
+	public bool allRange = false;
 }

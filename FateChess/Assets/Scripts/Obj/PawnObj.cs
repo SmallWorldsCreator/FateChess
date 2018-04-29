@@ -35,7 +35,7 @@ public class PawnObj : MonoBehaviour {
 		hpRender.enabled = (p_data.hp >= 0);
 
 		atkRender.sprite = PawnManager.instance.numberSprites[Mathf.Clamp (data.atk, 0, 10)];
-
+		anime.runtimeAnimatorController = p_data.typeData.animeController;
 	}
 
 	public void SetHp (int p_hp) {

@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:FateChess/Assets/Anime/Base.meta
 guid: 940b8d906014e8d47a46d1bece246f88
 folderAsset: yes
 timeCreated: 1524966679
+=======
+guid: 464ff9aaec71c16448a8fa459ceb4a50
+folderAsset: yes
+timeCreated: 1524966412
+>>>>>>> 90d0d1376778383d8fb0c8e8b3c51955ee48a9bd:FateChess/Assets/Anime/Base.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

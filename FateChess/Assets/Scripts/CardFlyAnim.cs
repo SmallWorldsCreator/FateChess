@@ -37,7 +37,7 @@ public class CardFlyAnim : MonoBehaviour {
 		step = 0;
 		TurnStarting = false;
 //		Cards [CardNum].transform.parent.gameObject.SetActive (false);
-		GetComponent<Animator>().Play ("CardDrop");
+		GetComponent<Animator>().Play ("CardDrop", -1, 0);
 	}
 	public void nowSelected(int cardnum){
 		GameManager.instance.player.SelectCard (cardnum);
