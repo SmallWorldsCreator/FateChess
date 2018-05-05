@@ -55,8 +55,10 @@ public class BoardManager : ManagerBase<BoardManager> {
 
 	public IEnumerator AddNowSelectPawn (int p_index) {
 		if (nowSelectPawn != null) {
-			yield return StartCoroutine( AddPawn (nowSelectPawn, p_index));
+			PawnData _data = nowSelectPawn;
 			nowSelectPawn = null;
+
+			yield return StartCoroutine( AddPawn (_data, p_index));
 		}
 	}
 
