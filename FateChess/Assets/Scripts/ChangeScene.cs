@@ -14,4 +14,8 @@ public class ChangeScene : MonoBehaviour {
 	public void ChangeToStartMenu(){
 		SceneManager.LoadScene ("StartMenu");
 	}
+
+	public void CloseGame(){
+		Application.Quit();
+	}
 }

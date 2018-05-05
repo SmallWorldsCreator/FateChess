@@ -145,10 +145,10 @@ public class GameManager : ManagerBase<GameManager> {
 			StartCoroutine(enemy.EnemyUseCard ());
 			break;
 		case E_GAME_STATE.Win:
-			
+			CanvasAnimator.Play("Win", -1, 0);
 			break;
 		case E_GAME_STATE.Lose:
-
+			CanvasAnimator.Play("Loose", -1, 0);
 			break;
 		}
 	}
