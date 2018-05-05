@@ -8,11 +8,12 @@ public class NewBehaviourScript1 : MonoBehaviour {
 
 	void Awake()
 	{
-		if (!created)
-		{
-			DontDestroyOnLoad(this.gameObject);
+		if (!created) {
+			DontDestroyOnLoad (this.gameObject);
 			created = true;
-			Debug.Log("Awake: " + this.gameObject);
+			Debug.Log ("Awake: " + this.gameObject);
+		} else {
+			Destroy (gameObject);
 		}
 	}
 }

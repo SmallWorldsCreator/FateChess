@@ -137,7 +137,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 589658043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e507da0b281e4de0adc492f67c8ece8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9483467625c76e5459835d4da1b117f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &589658045
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 664714815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e507da0b281e4de0adc492f67c8ece8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9483467625c76e5459835d4da1b117f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &664990282
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 968257980}
   - component: {fileID: 968257979}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Skip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

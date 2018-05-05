@@ -1,14 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sys\HeroObj.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NewBehaviourScript1.cs">
     <Files>
-      <File FileName="Assets\Scripts\Sys\GameManager.cs" Line="128" Column="21" />
-      <File FileName="Assets\Scripts\Sys\PawnManager.cs" Line="25" Column="3" />
-      <File FileName="Assets\Scripts\Data\FateData.cs" Line="14" Column="1" />
-      <File FileName="Assets\Scripts\Sys\HeroObj.cs" Line="147" Column="12" />
-      <File FileName="Assets\Scripts\Sys\BoardManager.cs" Line="364" Column="19" />
-      <File FileName="Assets\Scripts\CardFlyAnim.cs" Line="17" Column="22" />
-      <File FileName="Assets\Scripts\Data\PawnTypeData.cs" Line="13" Column="20" />
+      <File FileName="Assets\Scripts\Sys\GameManager.cs" Line="144" Column="38" />
+      <File FileName="Assets\Scripts\Sys\BoardManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Sys\PawnManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Data\FateData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Obj\PawnObj.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Obj\BoardObj.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Sys\HeroObj.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Data\AtkRangeData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Data\PawnData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Data\PawnTypeData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ChangeScene.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NewBehaviourScript1.cs" Line="16" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
