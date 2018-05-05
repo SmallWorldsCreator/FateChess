@@ -144,6 +144,8 @@ public class HeroObj : MonoBehaviour {
 			fateList.Add (_data);
 		}
 
+		SetHp (hp);
+
 		Refrash ();
 	}
 

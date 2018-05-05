@@ -12,6 +12,7 @@ public enum E_GAME_STATE{
 	PlayerAttack,
 	EnemyMove,
 	EnemyAttack,
+	AllHit,
 	PlayerNewFate,
 	SetBar,
 	EnemyNewFate,
@@ -119,6 +120,9 @@ public class GameManager : ManagerBase<GameManager> {
 			break;
 		case E_GAME_STATE.EnemyAttack:
 			StartCoroutine(BoardManager.instance.AllPawnAtk (E_PawnSide.Enemy));
+			break;
+		case E_GAME_STATE.AllHit:
+			StartCoroutine(BoardManager.instance.AllPawnHit ());
 			break;
 		case E_GAME_STATE.PlayerNewFate:
 			player.GenerateNewFate ();

@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Name: WD
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: a5f96317e03ddcb448b011317201860a, type: 3}
-  atkimage: {fileID: 21300000, guid: bf87b7dffc6e9784891c5e91f597aaca, type: 3}
+  hitImage: {fileID: 21300000, guid: 680c412077387004bb00603939be5541, type: 3}
   side: 1
   name: "\u5A1C\u5A1C\u91D1"
   animeController: {fileID: 9100000, guid: fb14df6a9dc67db46affd00a2b198abd, type: 2}
   atkRanges: []
+  atkimage: {fileID: 21300000, guid: bf87b7dffc6e9784891c5e91f597aaca, type: 3}
   atkEffect: {fileID: 1652705390855868, guid: 14e84e2ff3bf5fc4ca9ef096f607b84c, type: 2}
   atkSoundName: 
   allRange: 1

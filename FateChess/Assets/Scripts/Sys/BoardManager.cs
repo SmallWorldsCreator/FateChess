@@ -246,7 +246,7 @@ public class BoardManager : ManagerBase<BoardManager> {
 				if (GameManager.instance.autoFight) {
 					GameManager.instance.ChangeState (E_GAME_STATE.PlayerMove);
 				} else {
-					GameManager.instance.ChangeState (E_GAME_STATE.PlayerNewFate);
+					GameManager.instance.ChangeState (E_GAME_STATE.AllHit);
 				}
 				break;
 			}
@@ -292,11 +292,11 @@ public class BoardManager : ManagerBase<BoardManager> {
 
 		GameManager.instance.CanvasAnimator.Play ("Atk", -1, 0);
 		if (_atkObj.data.typeData.side == E_PawnSide.Enemy) {
-			GameManager.instance.playerImage.sprite = _targetObj.data.typeData.image;
+			GameManager.instance.playerImage.sprite = _targetObj.data.typeData.hitImage;
 			GameManager.instance.enemyImage.sprite = _atkObj.data.typeData.image;
 		} else {
 			GameManager.instance.playerImage.sprite = _atkObj.data.typeData.image;
-			GameManager.instance.enemyImage.sprite = _targetObj.data.typeData.image;
+			GameManager.instance.enemyImage.sprite = _targetObj.data.typeData.hitImage;
 		}
 
 		yield return new WaitForSeconds (0.2f * GameManager.instance.animeRate);
@@ -318,6 +318,42 @@ public class BoardManager : ManagerBase<BoardManager> {
 		}
 	}
 
+	public IEnumerator AllPawnHit () {
+		foreach(PawnObj _obj in pawnObjs){
+			if (_obj.data.typeData.side != E_PawnSide.None) {
+				_obj.anime.Play("Hit", -1, 0);
+				_obj.SetHp (_obj.hp - 1);
+			}
+		}
+
+		yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
+
+		bool _hasDie = false;
+		foreach(PawnObj _obj in pawnObjs){
+			if (_obj.hp <= 0) {
+				_obj.anime.Play("Die", -1, 0);
+				SoundManager.Play ("MainSoundTable", "PawnDie");
+				_hasDie = true;
+			}
+		}
+		if (_hasDie) {
+			yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
+
+			foreach(PawnObj _obj in pawnObjs){
+				if (_obj.hp <= 0) {
+					_obj.SetNewPawnData (PawnManager.instance.pawnNull);
+				}
+			}
+		}
+
+		E_GAME_STATE _state = CheckEnd ();
+		if (_state != E_GAME_STATE.None) {
+			GameManager.instance.ChangeState (_state);
+		} else {
+			GameManager.instance.ChangeState (E_GAME_STATE.PlayerNewFate);
+		}
+	}
+
 	public E_GAME_STATE CheckEnd () {
 		int _enemyCount = 0;
 		int _playerCount = 0;
@@ -332,10 +368,10 @@ public class BoardManager : ManagerBase<BoardManager> {
 				break;
 			}
 		}
-		if (_enemyCount <= 0) {
-			return E_GAME_STATE.Win;
-		} else if (_enemyCount <= 0) {
+		if (_playerCount <= 0) {
 			return E_GAME_STATE.Lose;
+		} else if (_enemyCount <= 0) {
+			return E_GAME_STATE.Win;
 		} else{
 			return E_GAME_STATE.None;
 		}

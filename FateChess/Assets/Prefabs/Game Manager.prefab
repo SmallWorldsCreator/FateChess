@@ -52,6 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetAsInstanceBut: SetAsInstance
+  CanvasAnimator: {fileID: 0}
+  playerImage: {fileID: 0}
+  enemyImage: {fileID: 0}
   state: 0
   heros:
   - {fileID: 0}
@@ -60,4 +63,6 @@ MonoBehaviour:
   cmrTop: {fileID: 0}
   cmrTargetPos: {x: 0, y: 0, z: 0}
   cmrMoveSpeed: 10
+  animeRate: 1
+  autoFight: 0
   changeStateBut: 3

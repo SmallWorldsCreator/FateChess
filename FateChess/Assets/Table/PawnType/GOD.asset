@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: GOD
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: a22bef15b30b2db449c524a670207b75, type: 3}
-  atkimage: {fileID: 21300000, guid: 5c4d6f28a15a13e4faa40361ed8e942c, type: 3}
+  hitImage: {fileID: 21300000, guid: 9a5c1c82ca988ff4bb9d0883f788c495, type: 3}
   side: 1
   name: ????????
   animeController: {fileID: 9100000, guid: 1c0a3aee23dba8e4a8874eab0062b08a, type: 2}
@@ -25,6 +25,7 @@ MonoBehaviour:
     length: 4
   - range: {x: 0, y: -1}
     length: 4
+  atkimage: {fileID: 21300000, guid: 5c4d6f28a15a13e4faa40361ed8e942c, type: 3}
   atkEffect: {fileID: 1249394282328128, guid: ccfda591838959140924b342133d0184, type: 2}
   atkSoundName: 
   allRange: 0

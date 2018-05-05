@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SetAsInstanceBut: SetAsInstance
   numberSprites:
-  - {fileID: 21300000, guid: 439b2688d73398343bb14f10977726da, type: 3}
+  - {fileID: 21300000, guid: cd210c57137c2734f897ee898969878f, type: 3}
   - {fileID: 21300000, guid: 677c134414c4f467a82ab5bedf4fd941, type: 3}
   - {fileID: 21300000, guid: 926d7bbf599d0412684ba0f6069df47b, type: 3}
   - {fileID: 21300000, guid: da1a0df895a7148f38d237bbac6b6511, type: 3}
@@ -67,8 +67,8 @@ MonoBehaviour:
   pawnPrefab: {fileID: 114051407266560386, guid: 4eb6086634722214bb0096ff2a408dc3,
     type: 2}
   pawnNull: {fileID: 11400000, guid: 7a2fab2adccef394dae4660a053d0377, type: 2}
-  pawnBasePlayer: {fileID: 11400000, guid: 3d1f86475f5a4d4478eee92ac26eaed9, type: 2}
-  pawnBaseEnemy: {fileID: 11400000, guid: f0a4fa28a81059045aa463d1d357847c, type: 2}
+  pawnBasePlayer: {fileID: 11400000, guid: f0a4fa28a81059045aa463d1d357847c, type: 2}
+  pawnBaseEnemy: {fileID: 11400000, guid: c571c686cffda66468ffe92e90a886f5, type: 2}
   playerPawnDataList:
   - {fileID: 11400000, guid: f0a4fa28a81059045aa463d1d357847c, type: 2}
   - {fileID: 11400000, guid: 1f5652c9d6b94c44bb33cc0e217e6d5a, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: GJ
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 80a52abef257394459f73ea09b71898c, type: 3}
-  atkimage: {fileID: 21300000, guid: 4c34159d2b6bdc74b81ee3ae064d6571, type: 3}
+  hitImage: {fileID: 21300000, guid: 2b377ae60bc35e7428b8540ece1794bc, type: 3}
   side: 0
   name: GJ
   animeController: {fileID: 9100000, guid: b1e91ec61b23faf48a944b52c50f3597, type: 2}
@@ -25,6 +25,7 @@ MonoBehaviour:
     length: 4
   - range: {x: 0, y: -1}
     length: 4
+  atkimage: {fileID: 21300000, guid: 4c34159d2b6bdc74b81ee3ae064d6571, type: 3}
   atkEffect: {fileID: 1249394282328128, guid: ccfda591838959140924b342133d0184, type: 2}
   atkSoundName: 
   allRange: 0
