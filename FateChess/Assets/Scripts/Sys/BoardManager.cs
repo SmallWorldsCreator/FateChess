@@ -232,20 +232,26 @@ public class BoardManager : ManagerBase<BoardManager> {
 
 		GameManager.instance.cmrTargetPos = pawnObjs [12].transform.position;
 
-		switch (GameManager.instance.state) {
-		case E_GAME_STATE.PlayerAttack:
-			yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
-			GameManager.instance.ChangeState (E_GAME_STATE.EnemyMove);
-			break;
-		case E_GAME_STATE.EnemyAttack:
-			yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
-			if (GameManager.instance.autoFight) {
-				GameManager.instance.ChangeState (E_GAME_STATE.PlayerMove);
-			}else{
-				GameManager.instance.ChangeState (E_GAME_STATE.PlayerNewFate);
+		E_GAME_STATE _state = CheckEnd ();
+		if (_state != E_GAME_STATE.None) {
+			GameManager.instance.ChangeState (_state);
+		} else {
+			switch (GameManager.instance.state) {
+			case E_GAME_STATE.PlayerAttack:
+				yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
+				GameManager.instance.ChangeState (E_GAME_STATE.EnemyMove);
+				break;
+			case E_GAME_STATE.EnemyAttack:
+				yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
+				if (GameManager.instance.autoFight) {
+					GameManager.instance.ChangeState (E_GAME_STATE.PlayerMove);
+				} else {
+					GameManager.instance.ChangeState (E_GAME_STATE.PlayerNewFate);
+				}
+				break;
 			}
-			break;
 		}
+
 	}
 
 	public IEnumerator PawnMove (int p_startIndex, int p_targetIndex) {
@@ -309,6 +315,29 @@ public class BoardManager : ManagerBase<BoardManager> {
 			yield return new WaitForSeconds (1f * GameManager.instance.animeRate);
 
 			_targetObj.SetNewPawnData (PawnManager.instance.pawnNull);
+		}
+	}
+
+	public E_GAME_STATE CheckEnd () {
+		int _enemyCount = 0;
+		int _playerCount = 0;
+			
+		foreach(PawnObj _obj in pawnObjs){
+			switch (_obj.data.typeData.side) {
+			case E_PawnSide.Enemy:
+				_enemyCount++;
+				break;
+			case E_PawnSide.Player:
+				_playerCount++;
+				break;
+			}
+		}
+		if (_enemyCount <= 0) {
+			return E_GAME_STATE.Win;
+		} else if (_enemyCount <= 0) {
+			return E_GAME_STATE.Lose;
+		} else{
+			return E_GAME_STATE.None;
 		}
 	}
 }

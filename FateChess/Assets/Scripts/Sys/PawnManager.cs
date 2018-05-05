@@ -27,7 +27,9 @@ public class PawnManager : ManagerBase<PawnManager> {
 		List<PawnData> _inRangeDataList = new List<PawnData>();
 
 		foreach (PawnData _data in _list) {
-			_inRangeDataList.Add (_data);
+			if (IntExtend.isInRange (_data.cost, (int)_range.x, (int)_range.y)) {
+				_inRangeDataList.Add (_data);
+			}
 		}
 
 		return new FateData (_inRangeDataList[Random.Range(0, _inRangeDataList.Count)]);;

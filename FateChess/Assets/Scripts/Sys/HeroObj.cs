@@ -110,17 +110,17 @@ public class HeroObj : MonoBehaviour {
 	}
 
 	public IEnumerator EnemyUseCard(){
-
-		if (hp >= fateList [2].data.cost) {
-			BoardManager.instance.SelectPawn (fateList [2].data);
-		} else if (hp >= fateList [1].data.cost) {
-			BoardManager.instance.SelectPawn (fateList [1].data);
-		} else if (hp >= fateList [0].data.cost) {
-			BoardManager.instance.SelectPawn (fateList [0].data);
+		int _random = Random.Range (0, 100);
+		int _index = 0;
+		if (_random < fateList [0].probability) {
+			_index = 0;
+		} else if (_random < fateList [0].probability + fateList [1].probability) {
+			_index = 1;
 		} else {
-			GameManager.instance.ChangeState(E_GAME_STATE.Draw);
-			yield break;
+			_index = 2;
 		}
+
+		BoardManager.instance.SelectPawn (fateList [_index].data);
 
 
 		List<int> _canAddIndexList = new List<int> ();
@@ -150,15 +150,24 @@ public class HeroObj : MonoBehaviour {
 	public void DrawCard(){
 //		fateList[f].probability
 
-
+		int _random = Random.Range (0, 100);
+		int _index = 0;
+		if (_random < fateList [0].probability) {
+			_index = 0;
+		} else if (_random < fateList [0].probability + fateList [1].probability) {
+			_index = 1;
+		} else {
+			_index = 2;
+		}
 
 		if ((GameManager.instance.state != E_GAME_STATE.Init) && (side == E_PawnSide.Player)) {
-			if (AddCard (fateList [0].data)) {
+			if (AddCard (fateList [_index].data)) {
 				GameManager.instance.CanvasAnimator.gameObject.GetComponent<CardFlyAnim> ().CardFlyIn (pawnList.Count-1);
-				GameManager.instance.CanvasAnimator.Play ("DrawCard", -1, 0);
 				SoundManager.Play ("MainSoundTable", "DrawCard");
-
+			} else {
+				GameManager.instance.ChangeState (E_GAME_STATE.PlayerUseCard);
 			}
+			GameManager.instance.CanvasAnimator.Play ("UseCard", -1, 0);
 		}
 
 	}

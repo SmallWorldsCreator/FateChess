@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public enum E_GAME_STATE{
+	None,
 	Init,
 	Draw,
 	PlayerUseCard,
@@ -15,6 +16,8 @@ public enum E_GAME_STATE{
 	SetBar,
 	EnemyNewFate,
 	EnemyUseCard,
+	Win,
+	Lose,
 	Len
 };
 
@@ -136,6 +139,12 @@ public class GameManager : ManagerBase<GameManager> {
 			break;
 		case E_GAME_STATE.EnemyUseCard:
 			StartCoroutine(enemy.EnemyUseCard ());
+			break;
+		case E_GAME_STATE.Win:
+			
+			break;
+		case E_GAME_STATE.Lose:
+
 			break;
 		}
 	}
