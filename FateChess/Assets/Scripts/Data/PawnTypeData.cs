@@ -11,11 +11,11 @@ public enum E_PawnSide{
 [CreateAssetMenu(menuName="ScriptableObject/PawnTypeData")]
 public class PawnTypeData : ScriptableObject {
 	public Sprite image;
-	public Sprite atkimage;
 	public E_PawnSide side;
 	public string name;
 	public RuntimeAnimatorController animeController;
 	public AtkRangeData[] atkRanges;
+	public Sprite atkimage;
 	public GameObject atkEffect;
 	public string atkSoundName = "";
 	public bool allRange = false;

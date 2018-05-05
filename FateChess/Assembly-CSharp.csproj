@@ -58,7 +58,7 @@
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
      <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
-     <Compile Include="Assets\PostProcessing\particle_prefab\SelfKill.cs" />
+     <Compile Include="Assets\Particle_Prefab\SelfKill.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -104,12 +104,14 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\Scripts\CardFlyAnim.cs" />
+     <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\Data\AtkRangeData.cs" />
      <Compile Include="Assets\Scripts\Data\FateData.cs" />
      <Compile Include="Assets\Scripts\Data\PawnData.cs" />
      <Compile Include="Assets\Scripts\Data\PawnTypeData.cs" />
      <Compile Include="Assets\Scripts\hpValue.cs" />
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript1.cs" />
      <Compile Include="Assets\Scripts\Obj\BoardObj.cs" />
      <Compile Include="Assets\Scripts\Obj\PawnObj.cs" />
      <Compile Include="Assets\Scripts\pawnInfo.cs" />
@@ -121,7 +123,7 @@
      <Compile Include="Assets\Scripts\Sys\PawnManager.cs" />
      <Compile Include="Assets\UETools\Magic_Particle_Effects\Scripts\CameraMovement.cs" />
      <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
-     <None Include="Assets\PostProcessing\particle_prefab\card meltdown\meltdown 1.shader" />
+     <None Include="Assets\Particle_Prefab\card meltdown\meltdown 1.shader" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>D:/gitdesktop/FateChess/FateChess/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>

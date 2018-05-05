@@ -89,7 +89,7 @@ public class HeroObj : MonoBehaviour {
 		if (pawnList [p_index].cost <= hp) {
 			nowSelectIndex = p_index;
 			BoardManager.instance.SelectPawn (pawnList [p_index]);
-//			Refrash ();
+			Refrash ();
 		}
 	}
 
@@ -111,16 +111,16 @@ public class HeroObj : MonoBehaviour {
 
 	public IEnumerator EnemyUseCard(){
 
-//		if (hp >= fateList [2].data.cost) {
+		if (hp >= fateList [2].data.cost) {
 			BoardManager.instance.SelectPawn (fateList [2].data);
-//		} else if (hp >= fateList [1].data.cost) {
-//			BoardManager.instance.SelectPawn (fateList [1].data);
-//		} else if (hp >= fateList [0].data.cost) {
-//			BoardManager.instance.SelectPawn (fateList [0].data);
-//		} else {
-//			GameManager.instance.ChangeState(E_GAME_STATE.Draw);
-//			yield break;
-//		}
+		} else if (hp >= fateList [1].data.cost) {
+			BoardManager.instance.SelectPawn (fateList [1].data);
+		} else if (hp >= fateList [0].data.cost) {
+			BoardManager.instance.SelectPawn (fateList [0].data);
+		} else {
+			GameManager.instance.ChangeState(E_GAME_STATE.Draw);
+			yield break;
+		}
 
 
 		List<int> _canAddIndexList = new List<int> ();
@@ -190,11 +190,13 @@ public class HeroObj : MonoBehaviour {
 						img.color = Color.gray;
 					}
 					pawnCards [i].GetComponent<Image> ().color = Color.clear;
+
 				} else {
 					foreach (Image img in pawnCards[i].GetComponentsInChildren<Image>()) {
 						img.color = Color.white;
 					}
 					pawnCards [i].GetComponent<Image> ().color = Color.clear;
+					pawnCards [i].transform.GetChild (0).GetComponent<Image> ().color = new Color (0.33f, 0.152f, 0.06f);
 				}
 				pawnCards [i].transform.parent.gameObject.SetActive (true);
 			}
