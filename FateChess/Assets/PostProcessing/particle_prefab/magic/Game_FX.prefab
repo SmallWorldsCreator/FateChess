@@ -167,6 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4639800713747630}
   - component: {fileID: 95603062232343376}
+  - component: {fileID: 114009366567800218}
   m_Layer: 0
   m_Name: Game_FX
   m_TagString: Untagged
@@ -483,7 +484,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388220396570560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.678851, y: -0.389, z: 5.124604}
+  m_LocalPosition: {x: -3.5256224, y: -0.87192273, z: -1.4451015}
   m_LocalScale: {x: -0.040016413, y: -0.040016413, z: -0.040016413}
   m_Children:
   - {fileID: 4668455463120358}
@@ -634,6 +635,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114009366567800218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388220396570560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2ac2858a3333247a0b95ab4af67e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doCmdBut: DoCmdDefaultNow
+  cmdType: 3
+  autoReset: 0
+  delayTime: 1
+  delayUnit: 0
 --- !u!198 &198000446348176778
 ParticleSystem:
   m_ObjectHideFlags: 1

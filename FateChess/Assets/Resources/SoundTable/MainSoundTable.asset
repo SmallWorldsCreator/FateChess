@@ -12,4 +12,54 @@ MonoBehaviour:
   m_Name: MainSoundTable
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: 9bae4aee6640587458a294b89d5745f3, type: 2}
-  soundList: []
+  soundList:
+  - table: {fileID: 11400000}
+    key: Button
+    clip: {fileID: 8300000, guid: f1dd9ae7e0b2c7f43ab08f6de4f79170, type: 3}
+    defaultVolume: 1
+    defaultLoop: 0
+  - table: {fileID: 11400000}
+    key: click2
+    clip: {fileID: 8300000, guid: 674b16f6337b690409ad99ec7d2ded26, type: 3}
+    defaultVolume: 1
+    defaultLoop: 0
+  - table: {fileID: 11400000}
+    key: cut
+    clip: {fileID: 8300000, guid: a9cc7963bfcde0047a11dcb4c7a36ec1, type: 3}
+    defaultVolume: 1
+    defaultLoop: 0
+  - table: {fileID: 11400000}
+    key: DarwCard
+    clip: {fileID: 8300000, guid: a5e8a8c3c95f9944895c2b4349104c3c, type: 3}
+    defaultVolume: 1
+    defaultLoop: 0
+  - table: {fileID: 11400000}
+    key: FateRota
+    clip: {fileID: 8300000, guid: fe443f477d4718642aa51040db68a0f0, type: 3}
+    defaultVolume: 1
+    defaultLoop: 0
+  - table: {fileID: 11400000}
+    key: hit
+    clip: {fileID: 8300000, guid: 1fb7ea6fe6376504780799de114febfb, type: 3}
+    defaultVolume: 1
+    defaultLoop: 0
+  - table: {fileID: 11400000}
+    key: PawnDie
+    clip: {fileID: 8300000, guid: 041be62e6faff164e860cafdf9f355ee, type: 3}
+    defaultVolume: 1
+    defaultLoop: 0
+  - table: {fileID: 11400000}
+    key: PawnIn
+    clip: {fileID: 8300000, guid: e77a2ba4aa1fe944a88aa77c6b706675, type: 3}
+    defaultVolume: 1
+    defaultLoop: 0
+  - table: {fileID: 11400000}
+    key: star
+    clip: {fileID: 8300000, guid: fce4a0ffac49b4b47b380855e1ce8143, type: 3}
+    defaultVolume: 1
+    defaultLoop: 0
+  - table: {fileID: 11400000}
+    key: UseCard
+    clip: {fileID: 8300000, guid: f646a55e334d9fd428cfdb887a7754ff, type: 3}
+    defaultVolume: 1
+    defaultLoop: 0

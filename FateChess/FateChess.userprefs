@@ -2,18 +2,22 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sys\HeroObj.cs">
     <Files>
-      <File FileName="Assets\Scripts\Sys\GameManager.cs" Line="29" Column="2" />
-      <File FileName="Assets\Scripts\Sys\BoardManager.cs" Line="31" Column="4" />
-      <File FileName="Assets\Scripts\Sys\PawnManager.cs" Line="16" Column="3" />
-      <File FileName="Assets\Scripts\Data\FateData.cs" Line="8" Column="23" />
-      <File FileName="Assets\Scripts\Obj\PawnObj.cs" Line="13" Column="14" />
-      <File FileName="Assets\Scripts\Obj\BoardObj.cs" Line="21" Column="11" />
-      <File FileName="Assets\Scripts\Sys\HeroObj.cs" Line="115" Column="1" />
+      <File FileName="Assets\Scripts\Sys\GameManager.cs" Line="138" Column="30" />
+      <File FileName="Assets\Scripts\Sys\BoardManager.cs" Line="213" Column="31" />
+      <File FileName="Assets\Scripts\Sys\PawnManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Data\FateData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Obj\PawnObj.cs" Line="33" Column="1" />
+      <File FileName="Assets\Scripts\Obj\BoardObj.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Sys\HeroObj.cs" Line="123" Column="6" />
       <File FileName="Assets\Scripts\Data\AtkRangeData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Data\PawnData.cs" Line="11" Column="17" />
+      <File FileName="Assets\Scripts\Data\PawnTypeData.cs" Line="14" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\gitdesktop\FateChess\FateChess\Assets\Scripts\Obj\PawnObj.cs" line="33" column="37" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

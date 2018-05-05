@@ -54,29 +54,61 @@ MonoBehaviour:
   SetAsInstanceBut: SetAsInstance
   numberSprites:
   - {fileID: 21300000, guid: 439b2688d73398343bb14f10977726da, type: 3}
-  - {fileID: 21300000, guid: cb7e2cde9eb453b408f4d4fb04cb200b, type: 3}
-  - {fileID: 21300000, guid: 39980d13b4061cb49b08a050d43862b4, type: 3}
-  - {fileID: 21300000, guid: 409a3e665309aad458540a1945ac5f18, type: 3}
-  - {fileID: 21300000, guid: 9b65386e649b14c46ab844396e1878ec, type: 3}
-  - {fileID: 21300000, guid: 5b0cb9c96d661074a8619806be12ae9e, type: 3}
-  - {fileID: 21300000, guid: 416778016eb79604aa699e6b15b43278, type: 3}
-  - {fileID: 21300000, guid: b4a32c3c2a39479418d05c5338ae62d3, type: 3}
-  - {fileID: 21300000, guid: 5ced86278517d4d479a6ad81f014efad, type: 3}
-  - {fileID: 21300000, guid: 4712149633500a848b61156ad7ca532f, type: 3}
-  - {fileID: 21300000, guid: 7bf5ca8f1a6eb07469805e3f43ac5d29, type: 3}
+  - {fileID: 21300000, guid: 677c134414c4f467a82ab5bedf4fd941, type: 3}
+  - {fileID: 21300000, guid: 926d7bbf599d0412684ba0f6069df47b, type: 3}
+  - {fileID: 21300000, guid: da1a0df895a7148f38d237bbac6b6511, type: 3}
+  - {fileID: 21300000, guid: 3f8da8e17a1e84a599b6ddd643774e63, type: 3}
+  - {fileID: 21300000, guid: ba343a2d7ca2b464eb745b9837a56b7a, type: 3}
+  - {fileID: 21300000, guid: 71a4a108bbcd4403e928adea7e295f60, type: 3}
+  - {fileID: 21300000, guid: 17ca30f45724841e992e5cd5c0a2bbb9, type: 3}
+  - {fileID: 21300000, guid: e827465b8c8884e25bb584d66c743ee5, type: 3}
+  - {fileID: 21300000, guid: 708d9ea06166b47409ab7f05a7e53ca0, type: 3}
+  - {fileID: 21300000, guid: 3aefbde700dc64d108a5933d91058b5f, type: 3}
   pawnPrefab: {fileID: 114051407266560386, guid: 4eb6086634722214bb0096ff2a408dc3,
     type: 2}
   pawnNull: {fileID: 11400000, guid: 7a2fab2adccef394dae4660a053d0377, type: 2}
-  pawnBasePlayer: {fileID: 11400000, guid: d4c73a89a802256488f8986fccb302b6, type: 2}
+  pawnBasePlayer: {fileID: 11400000, guid: 3d1f86475f5a4d4478eee92ac26eaed9, type: 2}
   pawnBaseEnemy: {fileID: 11400000, guid: f0a4fa28a81059045aa463d1d357847c, type: 2}
   playerPawnDataList:
-  - {fileID: 11400000, guid: d4c73a89a802256488f8986fccb302b6, type: 2}
-  - {fileID: 11400000, guid: 24ee853bd5f542242b86c104b8c5bc8e, type: 2}
-  - {fileID: 11400000, guid: a63663a5eb44bcf42bdf1ae41f808662, type: 2}
-  enemyPawnDataList:
   - {fileID: 11400000, guid: f0a4fa28a81059045aa463d1d357847c, type: 2}
-  - {fileID: 11400000, guid: 27e88b41c52372b4c941f568da679b1c, type: 2}
-  - {fileID: 11400000, guid: 2941307d7c9d3a64191b4ed713177a2b, type: 2}
+  - {fileID: 11400000, guid: 1f5652c9d6b94c44bb33cc0e217e6d5a, type: 2}
+  - {fileID: 11400000, guid: 49b2eb069009c2f41a0a0b494fcfb6a1, type: 2}
+  - {fileID: 11400000, guid: 34b2f789d4361c34293c512a2db828aa, type: 2}
+  - {fileID: 11400000, guid: b51f3f071d0c32f48a6af19ce371d8a5, type: 2}
+  - {fileID: 11400000, guid: 48bcde740f5a8c94ba2fc21e297d4a26, type: 2}
+  - {fileID: 11400000, guid: ccbec87c395de0d44adb5de8667207ce, type: 2}
+  - {fileID: 11400000, guid: 618c7c5ee31acef4bb62f2a176669641, type: 2}
+  - {fileID: 11400000, guid: 6d923c45dbec7324684d0912ddd3b098, type: 2}
+  - {fileID: 11400000, guid: e84da59c6713c204799cf1d4fe9772b8, type: 2}
+  - {fileID: 11400000, guid: 2f979ed53a5200d44b9b79669b176d10, type: 2}
+  - {fileID: 11400000, guid: af589385f9510f34c9b0880a315c68bd, type: 2}
+  - {fileID: 11400000, guid: 7ed7f21aa9dcf984daa861893e709026, type: 2}
+  - {fileID: 11400000, guid: 8a522a436fd22754a906ec0b617af011, type: 2}
+  - {fileID: 11400000, guid: 6cf67c4f728a99647a27407cb344eb40, type: 2}
+  - {fileID: 11400000, guid: 9f71803b46331374e9b16ad4e0cc7bbc, type: 2}
+  - {fileID: 11400000, guid: df43da3eb102f7643ba380acf6c351a6, type: 2}
+  - {fileID: 11400000, guid: 9b3d6214b5d833242a7edca8254a93b9, type: 2}
+  - {fileID: 11400000, guid: 73a6f667804da0e4d82573046c6420e7, type: 2}
+  enemyPawnDataList:
+  - {fileID: 11400000, guid: 3d1f86475f5a4d4478eee92ac26eaed9, type: 2}
+  - {fileID: 11400000, guid: 7add94b99c5b9544da45ecc3c532abd0, type: 2}
+  - {fileID: 11400000, guid: c571c686cffda66468ffe92e90a886f5, type: 2}
+  - {fileID: 11400000, guid: 561fee56b0c4c434fb9ee7f98faab982, type: 2}
+  - {fileID: 11400000, guid: d47e394423bb2ab4b972a53b2ee0d7b2, type: 2}
+  - {fileID: 11400000, guid: 64efd1af32383354b98d9d9966355107, type: 2}
+  - {fileID: 11400000, guid: 48b5ce5553ab26840b13dc705714d70b, type: 2}
+  - {fileID: 11400000, guid: 3a166d008504ea54189a9f4e52be84d9, type: 2}
+  - {fileID: 11400000, guid: a2d3e18fad72f6344a80bfec10e6157c, type: 2}
+  - {fileID: 11400000, guid: 84e21635f3b201a41a62df28d298ea1e, type: 2}
+  - {fileID: 11400000, guid: a899426f6d32d994d83f1d7ce005066b, type: 2}
+  - {fileID: 11400000, guid: 897ccf38f71f9a6459329e9a25e0f9fc, type: 2}
+  - {fileID: 11400000, guid: e05ed3d3d6785864486d0e4e7c0a147e, type: 2}
+  - {fileID: 11400000, guid: fdc1cc4cac3d40f4cb1e325f614cacac, type: 2}
+  - {fileID: 11400000, guid: c57ee17c50c78c3439d3781d0001ff48, type: 2}
+  - {fileID: 11400000, guid: 9916fdbde755e4446839a6b4d7a85560, type: 2}
+  - {fileID: 11400000, guid: 9604d389a5e64c94fbf37a39b80623b7, type: 2}
+  - {fileID: 11400000, guid: 6734d01ed36ac9341a6e90d55650918f, type: 2}
+  - {fileID: 11400000, guid: 20b6c6885c3dea44794ec2f9f7549a19, type: 2}
   pawnRanges:
   - {x: 0, y: 4}
   - {x: 3, y: 7}
