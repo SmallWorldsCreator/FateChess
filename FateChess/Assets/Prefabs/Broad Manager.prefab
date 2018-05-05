@@ -111,4 +111,4 @@ MonoBehaviour:
   - {x: 0, y: 1}
   - {x: -1, y: 0}
   - {x: 0, y: -1}
-  nowSelectPawn: {fileID: 11400000, guid: f0a4fa28a81059045aa463d1d357847c, type: 2}
+  nowSelectPawn: {fileID: 0}
