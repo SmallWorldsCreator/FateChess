@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sys\BoardManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sys\HeroObj.cs">
     <Files>
-      <File FileName="Assets\Scripts\Sys\GameManager.cs" Line="7" Column="7" />
+      <File FileName="Assets\Scripts\Sys\GameManager.cs" Line="128" Column="21" />
       <File FileName="Assets\Scripts\Sys\PawnManager.cs" Line="25" Column="3" />
       <File FileName="Assets\Scripts\Data\FateData.cs" Line="14" Column="1" />
-      <File FileName="Assets\Scripts\Sys\HeroObj.cs" Line="122" Column="3" />
-      <File FileName="Assets\Scripts\Sys\BoardManager.cs" Line="236" Column="15" />
-      <File FileName="Assets\Scripts\CardFlyAnim.cs" Line="43" Column="34" />
+      <File FileName="Assets\Scripts\Sys\HeroObj.cs" Line="147" Column="12" />
+      <File FileName="Assets\Scripts\Sys\BoardManager.cs" Line="364" Column="19" />
+      <File FileName="Assets\Scripts\CardFlyAnim.cs" Line="17" Column="22" />
+      <File FileName="Assets\Scripts\Data\PawnTypeData.cs" Line="13" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

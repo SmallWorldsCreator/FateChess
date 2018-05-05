@@ -110,6 +110,7 @@ public class GameManager : ManagerBase<GameManager> {
 		case E_GAME_STATE.PlayerUseCard:
 			break;
 		case E_GAME_STATE.PlayerMove:
+			CanvasAnimator.Play("PawnMove", -1, 0);
 			StartCoroutine(BoardManager.instance.AllPawnMove (E_PawnSide.Player));
 			break;
 		case E_GAME_STATE.PlayerAttack:
