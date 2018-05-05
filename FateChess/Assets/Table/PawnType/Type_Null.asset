@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Name: Type_Null
   m_EditorClassIdentifier: 
   image: {fileID: 0}
+  atkimage: {fileID: 21300000, guid: 5c4d6f28a15a13e4faa40361ed8e942c, type: 3}
   side: -1
   name: 
   animeController: {fileID: 9100000, guid: ff9a5bbdea4564f4fa417178e842330a, type: 2}
   atkRanges: []
+  atkEffect: {fileID: 0}
+  atkSoundName: 
   allRange: 0

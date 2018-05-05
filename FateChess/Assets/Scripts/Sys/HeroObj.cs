@@ -111,16 +111,16 @@ public class HeroObj : MonoBehaviour {
 
 	public IEnumerator EnemyUseCard(){
 
-		if (hp >= fateList [2].data.cost) {
+//		if (hp >= fateList [2].data.cost) {
 			BoardManager.instance.SelectPawn (fateList [2].data);
-		} else if (hp >= fateList [1].data.cost) {
-			BoardManager.instance.SelectPawn (fateList [1].data);
-		} else if (hp >= fateList [0].data.cost) {
-			BoardManager.instance.SelectPawn (fateList [0].data);
-		} else {
-			GameManager.instance.ChangeState(E_GAME_STATE.Draw);
-			yield break;
-		}
+//		} else if (hp >= fateList [1].data.cost) {
+//			BoardManager.instance.SelectPawn (fateList [1].data);
+//		} else if (hp >= fateList [0].data.cost) {
+//			BoardManager.instance.SelectPawn (fateList [0].data);
+//		} else {
+//			GameManager.instance.ChangeState(E_GAME_STATE.Draw);
+//			yield break;
+//		}
 
 
 		List<int> _canAddIndexList = new List<int> ();
@@ -177,11 +177,14 @@ public class HeroObj : MonoBehaviour {
 		if (GameManager.instance.state != E_GAME_STATE.Init && side == E_PawnSide.Player) {
 			int len = pawnList.Count;
 			for (int i = 0; i < len; i++) {
-				pawnCards [i].transform.GetChild (0).GetComponent<Image> ().sprite = pawnList [i].typeData.image;
+				pawnCards [i].transform.GetChild (0).GetChild(0).GetComponent<Image> ().sprite = pawnList [i].typeData.image;
+				pawnCards [i].transform.GetChild(1).GetComponent<Outline>().enabled = false;
 				pawnCards [i].transform.GetChild (2).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites[pawnList[i].cost];
 				pawnCards [i].transform.GetChild (3).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites[pawnList[i].atk];
 				pawnCards [i].transform.GetChild (4).GetComponent<Image> ().sprite = PawnManager.instance.numberSprites[pawnList[i].hp];
 				pawnCards [i].transform.GetChild (5).GetComponent<Text> ().text = pawnList [i].typeData.name;
+				pawnCards [i].transform.GetChild (6).GetComponent<Image> ().sprite = pawnList [i].typeData.atkimage;
+
 				if (pawnList[i].cost>hp) {
 					foreach (Image img in pawnCards[i].GetComponentsInChildren<Image>()) {
 						img.color = Color.gray;
@@ -190,7 +193,7 @@ public class HeroObj : MonoBehaviour {
 				} else {
 					foreach (Image img in pawnCards[i].GetComponentsInChildren<Image>()) {
 						img.color = Color.white;
-					}	
+					}
 					pawnCards [i].GetComponent<Image> ().color = Color.clear;
 				}
 				pawnCards [i].transform.parent.gameObject.SetActive (true);
@@ -199,14 +202,17 @@ public class HeroObj : MonoBehaviour {
 				pawnCards [i].transform.parent.gameObject.SetActive (false);
 
 			}
+			if (nowSelectIndex > -1) {
+				pawnCards [nowSelectIndex].transform.GetChild(1).GetComponent<Outline>().enabled = true;
+			}
 		}
 		if (nowSelectIndex > -1 && pawnCards[nowSelectIndex].activeSelf && side == E_PawnSide.Player) {
-			usedCard.transform.GetChild (0).GetComponent<Image> ().sprite = pawnCards [nowSelectIndex].transform.GetChild (0).GetComponent<Image> ().sprite;
+			usedCard.transform.GetChild (0).GetChild(0).GetComponent<Image> ().sprite = pawnCards [nowSelectIndex].transform.GetChild (0).GetChild(0).GetComponent<Image> ().sprite;
 			usedCard.transform.GetChild (2).GetComponent<Image> ().sprite = pawnCards [nowSelectIndex].transform.GetChild (2).GetComponent<Image> ().sprite;
 			usedCard.transform.GetChild (3).GetComponent<Image> ().sprite = pawnCards [nowSelectIndex].transform.GetChild (3).GetComponent<Image> ().sprite;
 			usedCard.transform.GetChild (4).GetComponent<Image> ().sprite = pawnCards [nowSelectIndex].transform.GetChild (4).GetComponent<Image> ().sprite;
 			usedCard.transform.GetChild (5).GetComponent<Text> ().text = pawnCards [nowSelectIndex].transform.GetChild (5).GetComponent<Text> ().text;
-
+			usedCard.transform.GetChild (6).GetComponent<Image> ().sprite = pawnCards [nowSelectIndex].transform.GetChild (6).GetComponent<Image> ().sprite;
 		}
 		if (side == E_PawnSide.Player) {
 			hpvalue.SetBarValue (((float)hp) / 10f);

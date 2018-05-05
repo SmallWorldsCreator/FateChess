@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Name: GD
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 2229a98c41877f141b1a502b027e8a46, type: 3}
+  atkimage: {fileID: 21300000, guid: bf87b7dffc6e9784891c5e91f597aaca, type: 3}
   side: 0
   name: "\u5DEB\u59AE"
   animeController: {fileID: 9100000, guid: 46dcf9b0f761347469badc815f579ba8, type: 2}
   atkRanges: []
   atkEffect: {fileID: 1652705390855868, guid: 14e84e2ff3bf5fc4ca9ef096f607b84c, type: 2}
+  atkSoundName: 
   allRange: 1

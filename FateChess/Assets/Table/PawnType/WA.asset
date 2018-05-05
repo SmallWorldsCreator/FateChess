@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: WA
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: c2a073cab557c4d4bb1d2acb831a443c, type: 3}
+  atkimage: {fileID: 21300000, guid: 5c4d6f28a15a13e4faa40361ed8e942c, type: 3}
   side: 1
   name: "\u827E\u75A4"
   animeController: {fileID: 9100000, guid: 278e466035e5bd44d950090b1053b3b3, type: 2}
@@ -25,4 +26,5 @@ MonoBehaviour:
   - range: {x: 0, y: -1}
     length: 1
   atkEffect: {fileID: 1987798468681524, guid: 593b56adc0bd18d46a12c6b86a42bdf0, type: 2}
+  atkSoundName: 
   allRange: 0
